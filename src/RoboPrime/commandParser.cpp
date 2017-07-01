@@ -5,12 +5,12 @@
  * Serial command interpreter.
  * 
  * RoboPrime Firmware, (https://github.com/simonepri/RoboPrime)
- * Copyright (c) 2015, Simone Primarosa,(http://simoneprimarosa.com)
+ * Copyright (c) 2015, Simone Primarosa, (https://simoneprimarosa.com)
  *
  * Licensed under The MIT License
  * Redistribution of file must retain the above copyright notice.
  * 
- * @copyright     Copyright (c) 2015, Simone Primarosa,(http://simoneprimarosa.com)
+ * @copyright     Copyright (c) 2015, Simone Primarosa, (https://simoneprimarosa.com)
  * @link          (https://github.com/simonepri/RoboPrime)
  * @since         0.0.0
  * @require       bodyMovement, animationStore
