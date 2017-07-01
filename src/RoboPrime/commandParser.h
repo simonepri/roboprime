@@ -73,7 +73,7 @@
 #define _Y_ alpIdx('Y')
 #define _Z_ alpIdx('Z')
 
-typedef struct cmd_t {
+struct cmd_t {
   bool isBusy;
   uint8_t firstCode, activeCode;
   uint16_t valueCode[_Z_ + 1];

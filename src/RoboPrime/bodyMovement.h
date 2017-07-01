@@ -82,7 +82,7 @@
 
 #define INVALID_BODY_POS 65535
 
-typedef struct block_t {
+struct block_t {
   uint16_t movAngle, movTime;
 };
 

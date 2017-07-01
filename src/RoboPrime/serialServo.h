@@ -80,7 +80,7 @@
 
 #define PORTB_PIN(_pin) (1 << (_pin-8))
 
-typedef struct servo_data_t {
+struct servo_data_t {
   bool pulseReached;
   float eachusTicks;
   uint16_t lastUpdate;

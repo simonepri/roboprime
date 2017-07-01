@@ -250,7 +250,7 @@
   {HF_R, PART_ELBOW_X_ROT, 600, 500},                    \
 }
 
-typedef struct anim_t {
+struct anim_t {
   bool busyAnimation, endingAnimation;
   uint8_t activeAnimation, stepAnimation,
           startAnimation, loopAnimation, endAnimation;
