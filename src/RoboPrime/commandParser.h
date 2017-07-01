@@ -85,7 +85,7 @@ class CommandParser {
     static void parseSerial();
   private:
     // No-one have to create an istance of this class as we use it as
-    // static method, so we keep constructor as private.
+    // a singleton, so we keep constructor as private.
     CommandParser();
     
     static void parseByte(char _b);

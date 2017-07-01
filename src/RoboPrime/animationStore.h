@@ -20,8 +20,9 @@
 /*
  * PURPOSE:
  *
- * This create a class to add to the queue the right movment in order to archive
+ * This creates a class that adds movements to the queue in order to achieve 
  * some basic robot animations.
+ * The code for the animations can be generated with the AnimHelper program.
  *
  * Implemented animations:
  * BASIC MOVMENTS:
@@ -268,7 +269,7 @@ class AnimationStore {
     static void executeAnimation();
   private:
     // No-one have to create an istance of this class as we use it as
-    // static method, so we keep constructor as private.
+    // a singleton, so we keep constructor as private.
     AnimationStore();
 
     static void nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);

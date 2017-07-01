@@ -55,19 +55,18 @@ steps_info_t
   AnimationStore::steps_FOR[ANIM_FOR_SIZE][ANIM_STEPS_INFO] = ANIM_FOR_STEPS;
 
 /**
- *
- *
- * @param .
- * @return none.
+ * Initializes class's fields.
  */
 void AnimationStore::begin() {
   clearAnimation(true);
 }
 /**
- *
- *
- * @param .
- * @return none.
+ * Applies a specific animation.
+ * 
+ * @param _anim animation id.
+ * @param _dist distance to travel (for anmations that moves the robot).
+ * @param _time the duration of the animation.
+ * @param _angle the angle to trvale (for anmations that rotates the robot).
  */
 void AnimationStore::applyAnimation(uint8_t _anim, uint16_t _dist,
                                     uint16_t _time, uint16_t _angle) {
@@ -84,10 +83,9 @@ void AnimationStore::applyAnimation(uint8_t _anim, uint16_t _dist,
 }
 
 /**
+ * Stops an animation.
  *
- *
- * @param .
- * @return none.
+ * @param _force .
  */
 void AnimationStore::clearAnimation(bool _force) {
   if(_force) {
@@ -105,10 +103,7 @@ void AnimationStore::clearAnimation(bool _force) {
 }
 
 /**
- *
- *
- * @param .
- * @return none.
+ * Processes the current applied animation.
  */
 void AnimationStore::executeAnimation() {
   static bool _half;
@@ -129,10 +124,12 @@ void AnimationStore::executeAnimation() {
 }
 
 /**
+ * Computes the next step for the current applied animation.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle,
                               uint16_t &_time) {
@@ -163,10 +160,12 @@ void AnimationStore::nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepFWW(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
@@ -177,10 +176,12 @@ void AnimationStore::nextStepFWW(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepBWW(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
@@ -191,10 +192,12 @@ void AnimationStore::nextStepBWW(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepSWR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
@@ -205,10 +208,12 @@ void AnimationStore::nextStepSWR(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepSWL(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
@@ -219,10 +224,12 @@ void AnimationStore::nextStepSWL(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                   uint16_t &_time) {
@@ -233,10 +240,12 @@ void AnimationStore::nextStepCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepCCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                    uint16_t &_time) {
@@ -247,10 +256,12 @@ void AnimationStore::nextStepCCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                   uint16_t &_time) {
@@ -261,10 +272,12 @@ void AnimationStore::nextStepCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepCCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                    uint16_t &_time) {
@@ -275,10 +288,12 @@ void AnimationStore::nextStepCCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepSIT(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
@@ -289,10 +304,12 @@ void AnimationStore::nextStepSIT(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepHR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
@@ -303,10 +320,12 @@ void AnimationStore::nextStepHR(bool &_half, uint8_t &_idx, uint16_t &_angle,
 }
 
 /**
+ * See nextStep.
  *
- *
- * @param .
- * @return none.
+ * @param _half right or left body part.
+ * @param _idx body part index.
+ * @param _angle angle*10 to set.
+ * @param _time duration of
  */
 void AnimationStore::nextStepFOR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {

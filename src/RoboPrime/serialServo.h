@@ -47,10 +47,10 @@
 #define SERIAL_SERVO_BANKA          0
 #define SERIAL_SERVO_BANKB          1
 
-#define BANKA_PULSE_PIN             9     
-#define BANKA_RST_PIN              12     
-#define BANKB_PULSE_PIN            10     
-#define BANKB_RST_PIN              13     
+#define BANKA_PULSE_PIN             9
+#define BANKA_RST_PIN              12
+#define BANKB_PULSE_PIN            10
+#define BANKB_RST_PIN              13
 
 #define PRESCALER_BITS              2     // 010.
 #define PRESCALER_VALUE             8     // Timer1 prescaler. 8 = 2 ticks = 1us. (With 16MHz clock)
@@ -115,15 +115,13 @@ class SerialServo {
     
     static void OCR1A_ISR();
     static void OCR1B_ISR();
-    
   private:
     // No-one have to create an istance of this class as we use it as
-    // static method, so we keep constructor as private.
+    // a singleton, so we keep constructor as private.
     SerialServo();
 
-    //All raw_ function declared here do not check the validity of the passed
-    //argument for speed reasons. Are supposed to be used only interneally by 
-    //this class and need to be declared as protected.
+    // All raw_ function declared here do not check the validity of the passed
+    // arguments for speed reasons. They are supposed to be used only internally.
     
     static uint16_t raw_degToUs(const uint8_t &_ch, const uint16_t &_deg);
     static uint16_t raw_usToDeg(const uint8_t &_ch, const uint16_t &_us);

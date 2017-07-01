@@ -32,10 +32,7 @@ cmd_t
   CommandParser::parser;
 
 /**
- * Method variables intialization.
- *
- * @param none.
- * @return none.
+ * Initializes class's fields.
  */
 void CommandParser::begin() {
   parser.firstCode = DEFAULT_CMD_IDX;
@@ -47,9 +44,6 @@ void CommandParser::begin() {
 
 /**
  * This routine is called by the loop and parse the serial commands.
- *
- * @param none.
- * @return none.
  */
 void CommandParser::parseSerial() {
   if(!parser.isBusy) {
@@ -63,10 +57,9 @@ void CommandParser::parseSerial() {
 }
 
 /**
- * Parse the input byte.
+ * Parses a byte recived.
  *
- * @param character.
- * @return none.
+ * @param _b a character.
  */
 void CommandParser::parseByte(char _b) {
   if(_b == ' ') {
@@ -107,10 +100,7 @@ void CommandParser::parseByte(char _b) {
 }
 
 /**
- * Parse codes.
- *
- * @param none.
- * @return none.
+ * Parses codes.
  */
 void CommandParser::parseCode() {
   switch(parser.firstCode) {
@@ -121,10 +111,7 @@ void CommandParser::parseCode() {
 }
 
 /**
- * Parse the S codes.
- *
- * @param none.
- * @return none.
+ * Parses the S codes.
  */
 void CommandParser::parseCodeS() {
   switch(parser.valueCode[_S_]) {
@@ -138,11 +125,8 @@ void CommandParser::parseCodeS() {
 /**
  * S0
  * R<index[0-9](optional)> or L<index[0-9](optional)>
- * Set the default angle for a servo.
+ * Sets the default angle for a servo.
  * If no index is passed all servos will be resetted.
- *
- * @param none.
- * @return none.
  */
 void CommandParser::parseCodeS0() {
   if(usedCode(parser.valueCode[_L_])) {
@@ -159,10 +143,7 @@ void CommandParser::parseCodeS0() {
 /**
  * S1
  * R<index[0-9]> or L<index[0-9]> A<angle[deg*10]>
- * Set an angle for a servo.
- *
- * @param none.
- * @return none.
+ * Sets an angle for a servo.
  */
 void CommandParser::parseCodeS1() {
   if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) || 
@@ -182,10 +163,7 @@ void CommandParser::parseCodeS1() {
 /**
  * S2
  * R<index[0-9]> or L<index[0-9]> A<angle[deg*10]> T<duration[ms]>
- * Sweep to a pulse width for a servo.
- * 
- * @param none.
- * @return none.
+ * Sweeps to a pulse width for a servo.
  */
 void CommandParser::parseCodeS2() {
   if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) ||
@@ -207,10 +185,7 @@ void CommandParser::parseCodeS2() {
 /**
  * S3
  * A<animation[]> D<distance[ms]> T<duration[ms]>
- * Apply an animation.
- * 
- * @param none.
- * @return none.
+ * Applies an animation.
  */
 void CommandParser::parseCodeS3() {
   if(!usedCode(parser.valueCode[_A_]) ||
@@ -225,10 +200,7 @@ void CommandParser::parseCodeS3() {
 }
 
 /**
- * Parse the Q codes.
- *
- * @param none.
- * @return none.
+ * Parses the Q codes.
  */
 void CommandParser::parseCodeQ() {
   switch(parser.valueCode[_Q_]) {
@@ -240,11 +212,8 @@ void CommandParser::parseCodeQ() {
 /**
  * Q0
  * R<index[0-9]> or L<index[0-9]> A<angle[deg*10](optional)> D<duration[ms]>
- * Plan a movment for a servo.
+ * Plans a movment for a servo.
  * If 'A' is not passed or is seted to 0 a pause will be planned instead.
- *
- * @param none.
- * @return none.
  */
 void CommandParser::parseCodeQ0() {
   if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) ||
@@ -278,10 +247,7 @@ void CommandParser::parseCodeQ0() {
 /**
  * Q1
  * A<antimation[]> D<duration[ms]> S<space[cm]>
- * Plan an animation.
- *
- * @param none.
- * @return none.
+ * Plans an animation.
  */
 void CommandParser::parseCodeQ1() {
   if(!usedCode(parser.valueCode[_A_]) ||
@@ -292,10 +258,7 @@ void CommandParser::parseCodeQ1() {
 }
 
 /**
- * Parse the C codes.
- *
- * @param none.
- * @return none.
+ * Parses the C codes.
  */
 void CommandParser::parseCodeC() {
   switch(parser.valueCode[_C_]) {
@@ -306,10 +269,7 @@ void CommandParser::parseCodeC() {
 /**
  * C0
  * R<index[0-9]> or L<index[0-9]> W<pulse witdh[us]>
- * Set a specific pulse width for calibration purposes.
- *
- * @param none.
- * @return none.
+ * Sets a specific pulse width for calibration purposes.
  */
 void CommandParser::parseCodeC0() {
   if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_]))

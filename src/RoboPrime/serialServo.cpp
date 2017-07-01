@@ -54,11 +54,10 @@ const PROGMEM uint16_t
   SerialServo::bound[SERIAL_SERVO_CHANNELS][BOUND_SIZE] = SERVO_WIDTH_BOUND;
 
 /**
- * Initialization of data array to default value, program each pin used as an
- * OUTPUT pin, send a reset pulse to the 4017 and start Timer1 interrupt.
- *
- * @param 
- * @return none.
+ * Initializes class's fields.
+ * It programs each pin as an OUTPUT pin.
+ * It sends a reset pulse to the 4017
+ * It starts Timer1 interrupt.
  */
 void SerialServo::begin() {
   for(uint8_t _ch = 0; _ch < SERIAL_SERVO_CHANNELS; _ch++) {
@@ -108,10 +107,10 @@ void SerialServo::begin() {
 }
 
 /**
- * Check if a valid channel is passed
+ * Checks if a valid channel is passed.
  *
- * @param channel index.
- * @return false if is a valid channel, false otherwise.
+ * @param _ch channel index.
+ * @return false if it's a valid channel, false otherwise.
  */
 inline bool SerialServo::isValidChannel(uint8_t _ch) {
   return (_ch < SERIAL_SERVO_CHANNELS);
@@ -122,8 +121,11 @@ inline bool SerialServo::isValidChannel(uint8_t _ch) {
  * channel with this value for the lifetime of the MPU or until writeWidth or
  * writeAngle is called again to update the value.
  *
- * @param channel index, pulse width to set.
- * @return none.
+ * @param _ch channel index.
+ * @param _us pulse width to set.
+ * @param _inverted if true it reverses the width passed.
+ * @param _calibration if true it applies the width without any software adjustment.
+ *  It's a special mode used for calibration purposes only.
  */
 void SerialServo::writeWidth(uint8_t _ch, uint16_t _us, bool _inverted, bool _calibration) {
   if(!isValidChannel(_ch)) {
@@ -147,8 +149,9 @@ void SerialServo::writeWidth(uint8_t _ch, uint16_t _us, bool _inverted, bool _ca
  * channel with this value for the lifetime of the MPU or until writeWidth or
  * writeAngle is called again to update the value.
  *
- * @param channel index, angle to set.
- * @return none.
+ * @param _ch channel index.
+ * @param _deg angle to set.
+ * @param _inverted if true it reverses the width passed.
  */
 void SerialServo::writeAngle(uint8_t _ch, uint16_t _deg, bool _inverted) {
   if(!isValidChannel(_ch)) {
@@ -167,10 +170,11 @@ void SerialServo::writeAngle(uint8_t _ch, uint16_t _deg, bool _inverted) {
 }
 
 /**
- * Read previously setted pulse width for a channel.
+ * Reads previously setted pulse width for a channel.
  *
- * @param channel index.
- * @return channel pulse width.
+ * @param _ch channel index.
+ * @param _inverted if true it reverses the width passed.
+ * @return the channel's pulse width.
  */
 uint16_t SerialServo::readWidth(uint8_t _ch, bool _inverted) {
   if(!isValidChannel(_ch)) {
@@ -184,10 +188,11 @@ uint16_t SerialServo::readWidth(uint8_t _ch, bool _inverted) {
 }
 
 /**
- * Read previously setted angle for a channel.
+ * Reads previously setted angle for a channel.
  *
- * @param channel index.
- * @return channel angle.
+ * @param _ch channel index.
+ * @param _inverted if true it reverses the width passed.
+ * @return the channel's angle.
  */
 uint16_t SerialServo::readAngle(uint8_t _ch, bool _inverted) {
   if(!isValidChannel(_ch)) {
@@ -201,10 +206,13 @@ uint16_t SerialServo::readAngle(uint8_t _ch, bool _inverted) {
 }
 
 /**
- * Set a certain pulse width smoothly for a channel in a predeterminated number
+ * Sets a certain pulse width smoothly for a channel in a predeterminated number
  * of millisecond.
  *
- * @param channel index, pulse width, time to sweep.
+ * @param _ch channel index.
+ * @param _us pulse width to set.
+ * @param _time time to sweep.
+ * @param _inverted if true it reverses the width passed.
  * @return none.
  */
 void SerialServo::sweepWidth(uint8_t _ch, uint16_t _us, uint16_t _time,
@@ -224,11 +232,13 @@ void SerialServo::sweepWidth(uint8_t _ch, uint16_t _us, uint16_t _time,
 }
 
 /**
- * Set an angle smoothly for a channel in a predeterminated number of
+ * Sets an angle smoothly for a channel in a predeterminated number of
  * millisecond.
  *
- * @param channel index, angle, time to sweep.
- * @return none.
+ * @param _ch channel index.
+ * @param _deg angle to set.
+ * @param _time time to sweep.
+ * @param _inverted if true it reverses the width passed.
  */
 void SerialServo::sweepAngle(uint8_t _ch, uint16_t _deg, uint16_t _time,
                              bool _inverted) {
@@ -248,11 +258,11 @@ void SerialServo::sweepAngle(uint8_t _ch, uint16_t _deg, uint16_t _time,
 }
 
 /**
- * Keep a channel in the actual position for a predeterminated number
+ * Keeps a channel in the actual position for a predeterminated number
  * of millisecond.
  *
- * @param channel index, time to wait.
- * @return none.
+ * @param _ch channel index.
+ * @param _time time to sweep.
  */
 void SerialServo::wait(uint8_t _ch, uint16_t _time) {
   if(!isValidChannel(_ch)) {
@@ -266,9 +276,10 @@ void SerialServo::wait(uint8_t _ch, uint16_t _time) {
 }
 
 /**
- * Get the minimum pulse width that can be setted to a channel.
+ * Gets the minimum pulse width that can be setted to a channel.
  *
- * @param channel index.
+ * @param _ch channel index.
+ * @param _inverted if true it reverses the width passed.
  * @return min pulse width.
  */
 uint16_t SerialServo::readMinWidth(uint8_t _ch, bool _inverted) {
@@ -282,9 +293,10 @@ uint16_t SerialServo::readMinWidth(uint8_t _ch, bool _inverted) {
 }
 
 /**
- * Get the maximum pulse width that can be setted to a channel.
+ * Gets the maximum pulse width that can be setted to a channel.
  *
- * @param channel index.
+ * @param _ch channel index.
+ * @param _inverted if true it reverses the width passed.
  * @return max pulse width.
  */
 uint16_t SerialServo::readMaxWidth(uint8_t _ch, bool _inverted) {
@@ -298,10 +310,10 @@ uint16_t SerialServo::readMaxWidth(uint8_t _ch, bool _inverted) {
 }
 
 /**
- * Check if a specific channel has reached the planned position.
+ * Checks if a specific channel has reached the planned position.
  *
- * @param channel index.
- * @return false if position is reached, false otherwise.
+ * @param _ch channel index.
+ * @return false if the position has been reached, false otherwise.
  */
 bool SerialServo::isMoving(uint8_t _ch) {
   if(!isValidChannel(_ch)) {
@@ -312,9 +324,6 @@ bool SerialServo::isMoving(uint8_t _ch) {
 
 /**
  * Enable sequence time compensation for sweep movments.
- *
- * @param none.
- * @return none.
  */
 void SerialServo::enableSequence() {
   sequence = true;
@@ -322,18 +331,16 @@ void SerialServo::enableSequence() {
 
 /**
  * Disable sequence time compensation for sweep movments.
- *
- * @param none.
- * @return none.
  */
 void SerialServo::disableSequence() {
   sequence = false;
 }
  
 /**
- * Convert deg to us.
+ * Converts deg to us.
  *
- * @param channel index, angle.
+ * @param _ch channel index.
+ * @param _deg angle to set.
  * @return microseconds.
  */
 inline uint16_t SerialServo::raw_degToUs(const uint8_t &_ch,
@@ -347,7 +354,8 @@ inline uint16_t SerialServo::raw_degToUs(const uint8_t &_ch,
 /**
  * Convert us to deg.
  *
- * @param channel index, microseconds.
+ * @param _ch channel index.
+ * @param _us pulse width to set.
  * @return angle.
  */
 inline uint16_t SerialServo::raw_usToDeg(const uint8_t &_ch,
@@ -362,7 +370,8 @@ inline uint16_t SerialServo::raw_usToDeg(const uint8_t &_ch,
 /**
  * Constrain a pulse width into our limit.
  *
- * @param microseconds.
+ * @param _ch channel index.
+ * @param _us pulse width to set.
  * @return constrained microseconds.
  */
 inline uint16_t SerialServo::raw_validWidth(const uint8_t &_ch,
@@ -381,7 +390,8 @@ inline uint16_t SerialServo::raw_validWidth(const uint8_t &_ch,
 /**
  * Constrain an angle into our limit.
  *
- * @param angle.
+ * @param _ch channel index.
+ * @param _deg angle to set.
  * @return constrained angle.
  */
 inline uint16_t SerialServo::raw_validAngle(const uint8_t &_ch,
@@ -398,7 +408,8 @@ inline uint16_t SerialServo::raw_validAngle(const uint8_t &_ch,
 /**
  * Invert a pulse width into our limit.
  *
- * @param microseconds.
+ * @param _ch channel index.
+ * @param _us pulse width to set.
  * @return inverted microseconds.
  */
 inline uint16_t SerialServo::raw_invertWidth(const uint8_t &_ch,
@@ -409,7 +420,8 @@ inline uint16_t SerialServo::raw_invertWidth(const uint8_t &_ch,
 /**
  * Invert an angle into our limit.
  *
- * @param angle.
+ * @param _ch channel index.
+ * @param _deg angle to set.
  * @return inverted angle.
  */
 inline uint16_t SerialServo::raw_invertAngle(const uint8_t &_ch,
@@ -420,7 +432,8 @@ inline uint16_t SerialServo::raw_invertAngle(const uint8_t &_ch,
 /**
  * See writeWidth
  *
- * @param channel index, pulse width to set.
+ * @param _ch channel index.
+ * @param _us pulse width to set.
  * @return none.
  */
 inline void SerialServo::raw_writeWidth(const uint8_t &_ch,
@@ -439,7 +452,7 @@ inline void SerialServo::raw_writeWidth(const uint8_t &_ch,
 /**
  * See readWidth
  *
- * @param channel index.
+ * @param _ch channel index.
  * @return channel pulse width.
  */
 inline uint16_t SerialServo::raw_readWidth(const uint8_t &_ch) {
@@ -447,11 +460,13 @@ inline uint16_t SerialServo::raw_readWidth(const uint8_t &_ch) {
 }
 
 //static uint32_t start[20];
+
 /**
  * See sweepWidth
  *
- * @param channel index, pulse width, sweep time.
- * @return none.
+ * @param _ch channel index.
+ * @param _us pulse width to set.
+ * @param _time time to sweep.
  */
 inline void SerialServo::raw_sweepWidth(const uint8_t &_ch, const uint16_t &_us,
                                         const uint16_t &_time) {
@@ -481,8 +496,8 @@ inline void SerialServo::raw_sweepWidth(const uint8_t &_ch, const uint16_t &_us,
 /**
  * See wait
  *
- * @param channel index, wait time.
- * @return none.
+ * @param _ch channel index.
+ * @param _time time to sweep.
  */
 inline void SerialServo::raw_wait(const uint8_t &_ch, const uint16_t &_time) {
   data[_ch].updateDisabled = true;
@@ -505,7 +520,7 @@ inline void SerialServo::raw_wait(const uint8_t &_ch, const uint16_t &_time) {
 /**
  * See readMinWidth.
  *
- * @param channel index.
+ * @param _ch channel index.
  * @return min pulse width.
  */
 inline uint16_t SerialServo::raw_readMinWidth(const uint8_t &_ch) {
@@ -515,7 +530,7 @@ inline uint16_t SerialServo::raw_readMinWidth(const uint8_t &_ch) {
 /**
  * See readMaxWidth.
  *
- * @param channel index.
+ * @param _ch channel index.
  * @return max pulse width.
  */
 inline uint16_t SerialServo::raw_readMaxWidth(const uint8_t &_ch) {
@@ -523,10 +538,7 @@ inline uint16_t SerialServo::raw_readMaxWidth(const uint8_t &_ch) {
 }
 
 /**
- * Utility to check if is elapsed enought time to set the movment as completed.
- *
- * @param none.
- * @return none.
+ * Checks if is elapsed enought time to set the movment as completed.
  */
 inline void SerialServo::raw_movementCheck() {
   static uint8_t _ch = SERIAL_SERVO_BANKA_LOW;
@@ -558,10 +570,7 @@ inline void SerialServo::raw_movementCheck() {
 }
 
 /**
- * Utility to calculate the next pulse ticks increment.
- *
- * @param none.
- * @return none.
+ * Calculates the next pulse ticks increment.
  */
 inline void SerialServo::raw_incrementCalculator() {
   static bool _block = SERIAL_SERVO_BANKA;
@@ -580,9 +589,6 @@ inline void SerialServo::raw_incrementCalculator() {
 
 /**
  * See raw_interrupt.
- *
- * @param none.
- * @return none.
  */
  
 void SerialServo::servoRoutine() {
@@ -591,14 +597,12 @@ void SerialServo::servoRoutine() {
 }
 
 /**
- * Send clock pulse for each channel to 4017 decade counter .
+ * Sends clock pulse for each channel to 4017 decade counter.
  * If the channel number is >= __block_upp, we need to reset the counter and
  * start again from __block_low.
  * To do this we pulse the reset pin of the counter this sets output 0 of the
  * counter high, effectivley starting the first pulse of our first channel.
- *
- * @param none.
- * @return none.
+ * 
  */
  
 #define raw_interrupt(__block, __block_low, __block_upp, __timer_reg, __pin_reg, __pulse_pin, __reset_pin) {\
@@ -630,9 +634,6 @@ void SerialServo::servoRoutine() {
 
 /**
  * See raw_interrupt.
- *
- * @param none.
- * @return none.
  */
 inline void SerialServo::OCR1A_ISR() {
   /*static uint32_t _time = micros();
@@ -653,11 +654,7 @@ inline void SerialServo::OCR1A_ISR() {
  
 /**
  * See raw_interrupt.
- *
- * @param none.
- * @return none.
  */
- 
 inline void SerialServo::OCR1B_ISR() {
   raw_interrupt(SERIAL_SERVO_BANKB,
                 SERIAL_SERVO_BANKB_LOW,

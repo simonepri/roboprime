@@ -115,7 +115,7 @@ class BodyMovement {
     static void movementPlanner();
   private:
     // No-one have to create an istance of this class as we use it as
-    // static method, so we keep constructor as private.
+    // a singleton, so we keep constructor as private.
     BodyMovement();
 
     static uint16_t raw_validAngle(const bool &_half, const uint8_t &_idx,
