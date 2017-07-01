@@ -196,7 +196,7 @@ uint16_t SerialServo::readWidth(uint8_t _ch, bool _inverted) {
  */
 uint16_t SerialServo::readAngle(uint8_t _ch, bool _inverted) {
   if(!isValidChannel(_ch)) {
-    return -1.0;
+    return (uint16_t)-1.0;
   }
   uint16_t _us = raw_readWidth(_ch);
   if(_inverted) {
