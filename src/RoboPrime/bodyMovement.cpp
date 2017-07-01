@@ -26,7 +26,7 @@
  * pos array is located in FLASH momery and store information about the minimum,
  * and maximum angle avaible for a bodypart. It also store the default position
  * for each bodypart.
- **/
+ */
 body_pos_t
   BodyMovement::pos[HF_NUM][POS_SIZE] = SERVO_ANGLE_POS;
 
@@ -34,7 +34,7 @@ body_pos_t
  * offset array is located in FLASH momery and store information about the
  * angle offset for each bodypart in order to get all part alligned in case of
  * errors due to 3D printed pieces.
- **/
+ */
 body_offset_t
   BodyMovement::offset[HF_NUM][HF_SIZE] = SERVO_ANGLE_OFFSET;
 
@@ -42,7 +42,7 @@ body_offset_t
  * head and tail array is located in SRAM momery and store respectivley
  * information about the index of next free queue block and the index of the
  * last unfree block.
- **/
+ */
 uint8_t
   BodyMovement::head[HF_SIZE][HF_NUM],
   BodyMovement::tail[HF_SIZE][HF_NUM];
@@ -50,7 +50,7 @@ uint8_t
 /**
  * queue array is located in SRAM momery and store information about the next
  * planned movment for each bodypart.
- **/
+ */
 block_t
   BodyMovement::queue[HF_SIZE][HF_NUM][BF_SIZE];
 
@@ -59,7 +59,7 @@ block_t
  *
  * @param none.
  * @return none.
- **/
+ */
 void BodyMovement::begin() {
   setDefault();
   
@@ -73,7 +73,7 @@ void BodyMovement::begin() {
  *
  * @param body part index.
  * @return true if the queue is empty, false otherwise.
- **/
+ */
 inline bool BodyMovement::isValidBodypart(uint8_t _idx) {
   return (_idx < HF_NUM);
 }
@@ -84,7 +84,7 @@ inline bool BodyMovement::isValidBodypart(uint8_t _idx) {
  *
  * @param right or left body part, body part index, angle*10.
  * @return none.
- **/
+ */
 void BodyMovement::setPos(bool _half, uint8_t _idx, uint16_t _angle) {
   if(!isValidBodypart(_idx)) {
     return;
@@ -98,7 +98,7 @@ void BodyMovement::setPos(bool _half, uint8_t _idx, uint16_t _angle) {
  * @param right or left body part, body part index, angle*10, duration of
  * movment.
  * @return none.
- **/
+ */
 void BodyMovement::setSweep(bool _half, uint8_t _idx, uint16_t _angle,
                             uint16_t _time) {
   if(!isValidBodypart(_idx)) {
@@ -113,7 +113,7 @@ void BodyMovement::setSweep(bool _half, uint8_t _idx, uint16_t _angle,
  *
  * @param none.
  * @return none.
- **/
+ */
 void BodyMovement::setDefault() {
   uint16_t _deg;
   bool _half;
@@ -131,7 +131,7 @@ void BodyMovement::setDefault() {
  *
  * @param right or left body part, body part index.
  * @return none.
- **/
+ */
 void BodyMovement::setDefault(bool _half, uint8_t _idx) {
   if(!isValidBodypart(_idx)) {
     return;
@@ -145,7 +145,7 @@ void BodyMovement::setDefault(bool _half, uint8_t _idx) {
  *
  * @param true to enable false to disable.
  * @return none.
- **/
+ */
 void BodyMovement::setSequence(bool _status) {
   if(_status) {
     SerialServo::enableSequence();
@@ -159,7 +159,7 @@ void BodyMovement::setSequence(bool _status) {
  *
  * @param right or left body part, body part index, duration.
  * @return none.
- **/
+ */
 void BodyMovement::setWait(bool _half, uint8_t _idx, uint16_t _time) {
   if(!isValidBodypart(_idx)) {
     return;
@@ -172,7 +172,7 @@ void BodyMovement::setWait(bool _half, uint8_t _idx, uint16_t _time) {
  *
  * @param right or left body part, body part index.
  * @return channel angle.
- **/
+ */
 uint16_t BodyMovement::getPos(bool _half, uint8_t _idx) {
   if(!isValidBodypart(_idx)) {
     return 0;
@@ -185,7 +185,7 @@ uint16_t BodyMovement::getPos(bool _half, uint8_t _idx) {
  *
  * @param right or left body part, body part index.
  * @return channel angle.
- **/
+ */
 uint16_t BodyMovement::getMinPos(uint8_t _idx) {
   if(!isValidBodypart(_idx)) {
     return 0;
@@ -198,7 +198,7 @@ uint16_t BodyMovement::getMinPos(uint8_t _idx) {
  *
  * @param right or left body part, body part index.
  * @return channel angle.
- **/
+ */
 uint16_t BodyMovement::getDefaultPos(uint8_t _idx) {
   if(!isValidBodypart(_idx)) {
     return 0;
@@ -211,7 +211,7 @@ uint16_t BodyMovement::getDefaultPos(uint8_t _idx) {
  *
  * @param right or left body part, body part index.
  * @return channel angle.
- **/
+ */
 uint16_t BodyMovement::getMaxPos(uint8_t _idx) {
   if(!isValidBodypart(_idx)) {
     return 0;
@@ -224,7 +224,7 @@ uint16_t BodyMovement::getMaxPos(uint8_t _idx) {
  *
  * @param right or left body part, body part index.
  * @return true if the bodyport is moving.
- **/
+ */
 bool BodyMovement::isMoving(bool _half, uint8_t _idx) {
   if(!isValidBodypart(_idx)) {
     return false;
@@ -238,7 +238,7 @@ bool BodyMovement::isMoving(bool _half, uint8_t _idx) {
  * @param right or left body part, body part index, angle*10, duration of
  * movment.
  * @return none.
- **/
+ */
 bool BodyMovement::pushQueue(bool _half, uint8_t _idx, uint16_t _angle,
                              uint16_t _time) {
   if(!isValidBodypart(_idx) || raw_isQueueFull(_half, _idx)) {
@@ -253,7 +253,7 @@ bool BodyMovement::pushQueue(bool _half, uint8_t _idx, uint16_t _angle,
  *
  * @param right or left body part, body part index.
  * @return none.
- **/
+ */
 bool BodyMovement::popQueue(bool _half, uint8_t _idx) {
   if(!isValidBodypart(_idx) || isQueueEmpty(_half, _idx)) {
     return false;
@@ -267,7 +267,7 @@ bool BodyMovement::popQueue(bool _half, uint8_t _idx) {
  *
  * @param right or left body part, body part index.
  * @return true if the queue is full, false otherwise.
- **/
+ */
 bool BodyMovement::isQueueFull(bool _half, uint8_t _idx) {
   if(!isValidBodypart(_idx)) {
     return true;
@@ -280,7 +280,7 @@ bool BodyMovement::isQueueFull(bool _half, uint8_t _idx) {
  *
  * @param right or left body part, body part index.
  * @return true if the queue is empty, false otherwise.
- **/
+ */
 bool BodyMovement::isQueueEmpty(bool _half, uint8_t _idx) {
   if(!isValidBodypart(_idx)) {
     return false;
@@ -293,7 +293,7 @@ bool BodyMovement::isQueueEmpty(bool _half, uint8_t _idx) {
  *
  * @parambody part index, angle*10.
  * @return costrain angle.
- **/
+ */
 inline uint16_t BodyMovement::raw_validAngle(const bool &_half,
                                              const uint8_t &_idx,
                                              const uint16_t &_angle) {
@@ -333,7 +333,7 @@ inline uint16_t BodyMovement::raw_validAngle(const bool &_half,
  *
  * @param right or left body part, body part index, angle*10.
  * @return none.
- **/
+ */
 inline void BodyMovement::raw_setPos(const bool &_half, const uint8_t &_idx,
                                      const uint16_t &_angle) {
   uint16_t _anglefix = raw_validAngle(_half, _idx, _angle);
@@ -349,7 +349,7 @@ inline void BodyMovement::raw_setPos(const bool &_half, const uint8_t &_idx,
  *
  * @param right or left body part, body part index, angle*10, duration of movment.
  * @return none.
- **/
+ */
 inline void BodyMovement::raw_setSweep(const bool &_half, const uint8_t &_idx,
                                        const uint16_t &_angle,
                                        const uint16_t &_time) {
@@ -365,7 +365,7 @@ inline void BodyMovement::raw_setSweep(const bool &_half, const uint8_t &_idx,
  *
  * @param right or left body part, body part index.
  * @return none.
- **/
+ */
 inline void BodyMovement::raw_setDefault(const bool &_half,
                                          const uint8_t &_idx) {
   raw_setPos(_half, _idx, raw_getDefaultPos(_idx));
@@ -376,7 +376,7 @@ inline void BodyMovement::raw_setDefault(const bool &_half,
  *
  * @param right or left body part, body part index, duration.
  * @return none.
- **/
+ */
 inline void BodyMovement::raw_setWait(const bool &_half, const uint8_t &_idx,
                                       const uint16_t &_time) {
   if(_half) {
@@ -391,7 +391,7 @@ inline void BodyMovement::raw_setWait(const bool &_half, const uint8_t &_idx,
  *
  * @param right or left body part, body part index.
  * @return channel angle.
- **/
+ */
 inline uint16_t BodyMovement::raw_getPos(const bool &_half,
                                          const uint8_t &_idx) {
   if(_half) {
@@ -405,7 +405,7 @@ inline uint16_t BodyMovement::raw_getPos(const bool &_half,
  *
  * @param right or left body part, body part index.
  * @return channel angle.
- **/
+ */
 inline uint16_t BodyMovement::raw_getMinPos(const uint8_t &_idx) {
   return pgm_read_word_near(&(pos[_idx][POS_MIN]));
 }
@@ -415,7 +415,7 @@ inline uint16_t BodyMovement::raw_getMinPos(const uint8_t &_idx) {
  *
  * @param right or left body part, body part index.
  * @return channel angle.
- **/
+ */
 inline uint16_t BodyMovement::raw_getDefaultPos(const uint8_t &_idx) {
   return pgm_read_word_near(&(pos[_idx][POS_MED]));
 }
@@ -425,7 +425,7 @@ inline uint16_t BodyMovement::raw_getDefaultPos(const uint8_t &_idx) {
  *
  * @param right or left body part, body part index.
  * @return channel angle.
- **/
+ */
 inline uint16_t BodyMovement::raw_getMaxPos(const uint8_t &_idx) {
   return pgm_read_word_near(&(pos[_idx][POS_MAX]));
 }
@@ -435,7 +435,7 @@ inline uint16_t BodyMovement::raw_getMaxPos(const uint8_t &_idx) {
  *
  * @param right or left body part, body part index.
  * @return true if the bodyport is moving.
- **/
+ */
 inline bool BodyMovement::raw_isMoving(const bool &_half, const uint8_t &_idx) {
   if(_half) {
     return SerialServo::isMoving(HF_NUM + _idx);
@@ -448,7 +448,7 @@ inline bool BodyMovement::raw_isMoving(const bool &_half, const uint8_t &_idx) {
  *
  * @param right or left body part, body part index, angle*10, duration of movment.
  * @return none.
- **/
+ */
 inline void BodyMovement::raw_pushQueue(const bool &_half, const uint8_t &_idx,
                                         const uint16_t &_angle,
                                         const uint16_t &_time) {
@@ -462,7 +462,7 @@ inline void BodyMovement::raw_pushQueue(const bool &_half, const uint8_t &_idx,
  *
  * @param right or left body part, body part index.
  * @return none.
- **/
+ */
 inline void BodyMovement::raw_popQueue(const bool &_half, const uint8_t &_idx) {
   if(queue[_half][_idx][tail[_half][_idx]].movAngle == INVALID_BODY_POS) {
     raw_setWait(_half, _idx, queue[_half][_idx][tail[_half][_idx]].movTime);
@@ -479,7 +479,7 @@ inline void BodyMovement::raw_popQueue(const bool &_half, const uint8_t &_idx) {
  *
  * @param right or left body part, body part index.
  * @return true if the queue is full, false otherwise.
- **/
+ */
 inline bool BodyMovement::raw_isQueueFull(const bool &_half,
                                           const uint8_t &_idx) {
   return fullQueue(nextQueue(head[_half][_idx]), tail[_half][_idx]);
@@ -490,7 +490,7 @@ inline bool BodyMovement::raw_isQueueFull(const bool &_half,
  *
  * @param right or left body part, body part index.
  * @return true if the queue is empty, false otherwise.
- **/
+ */
 inline bool BodyMovement::raw_isQueueEmpty(const bool &_half,
                                            const uint8_t &_idx) {
   return emptyQueue(head[_half][_idx], tail[_half][_idx]);
@@ -501,7 +501,7 @@ inline bool BodyMovement::raw_isQueueEmpty(const bool &_half,
  *
  * @param none.
  * @return none.
- **/
+ */
 void BodyMovement::movementPlanner() {
   static uint8_t _idx = 0;
   bool _half = false;

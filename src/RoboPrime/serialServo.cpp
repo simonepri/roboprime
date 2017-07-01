@@ -21,35 +21,35 @@
 /**
  * "sequence" variable is located in SRAM momery and is a flag in order to enable
  * time compensation for a squence of movments.
- **/
+ */
 bool
   SerialServo::sequence;
 
 /**
  * "channel" variable is located in SRAM momery and store the next channel that
  * will be uptated in the Interrupt Routine Service.
- **/
+ */
 volatile uint16_t 
   SerialServo::channel[SERIAL_SERVO_BANKS];
   
 /**
  * "period" variable is located in SRAM momery and store the time elapsed from
  * the last update of a channel.
- **/
+ */
 volatile uint16_t 
   SerialServo::period[SERIAL_SERVO_BANKS];
   
 /**
  * "data" array is located in SRAM momery and store information about the setted
  * pulse width for each channel.
- **/
+ */
 servo_data_t
   SerialServo::data[SERIAL_SERVO_CHANNELS];
 
 /**
  * "bound" array is located in FLASH memory and store information about the maximum
  * and minimum pulse width that can be setted for each channel.
- **/
+ */
 const PROGMEM uint16_t
   SerialServo::bound[SERIAL_SERVO_CHANNELS][BOUND_SIZE] = SERVO_WIDTH_BOUND;
 
@@ -59,7 +59,7 @@ const PROGMEM uint16_t
  *
  * @param 
  * @return none.
- **/
+ */
 void SerialServo::begin() {
   for(uint8_t _ch = 0; _ch < SERIAL_SERVO_CHANNELS; _ch++) {
     data[_ch].pulseReached = true;
@@ -112,7 +112,7 @@ void SerialServo::begin() {
  *
  * @param channel index.
  * @return false if is a valid channel, false otherwise.
- **/
+ */
 inline bool SerialServo::isValidChannel(uint8_t _ch) {
   return (_ch < SERIAL_SERVO_CHANNELS);
 }
@@ -124,7 +124,7 @@ inline bool SerialServo::isValidChannel(uint8_t _ch) {
  *
  * @param channel index, pulse width to set.
  * @return none.
- **/
+ */
 void SerialServo::writeWidth(uint8_t _ch, uint16_t _us, bool _inverted, bool _calibration) {
   if(!isValidChannel(_ch)) {
     return;
@@ -149,7 +149,7 @@ void SerialServo::writeWidth(uint8_t _ch, uint16_t _us, bool _inverted, bool _ca
  *
  * @param channel index, angle to set.
  * @return none.
- **/
+ */
 void SerialServo::writeAngle(uint8_t _ch, uint16_t _deg, bool _inverted) {
   if(!isValidChannel(_ch)) {
     return;
@@ -171,7 +171,7 @@ void SerialServo::writeAngle(uint8_t _ch, uint16_t _deg, bool _inverted) {
  *
  * @param channel index.
  * @return channel pulse width.
- **/
+ */
 uint16_t SerialServo::readWidth(uint8_t _ch, bool _inverted) {
   if(!isValidChannel(_ch)) {
     return 0;
@@ -188,7 +188,7 @@ uint16_t SerialServo::readWidth(uint8_t _ch, bool _inverted) {
  *
  * @param channel index.
  * @return channel angle.
- **/
+ */
 uint16_t SerialServo::readAngle(uint8_t _ch, bool _inverted) {
   if(!isValidChannel(_ch)) {
     return -1.0;
@@ -206,7 +206,7 @@ uint16_t SerialServo::readAngle(uint8_t _ch, bool _inverted) {
  *
  * @param channel index, pulse width, time to sweep.
  * @return none.
- **/
+ */
 void SerialServo::sweepWidth(uint8_t _ch, uint16_t _us, uint16_t _time,
                              bool _inverted) {
   if(!isValidChannel(_ch)) {
@@ -229,7 +229,7 @@ void SerialServo::sweepWidth(uint8_t _ch, uint16_t _us, uint16_t _time,
  *
  * @param channel index, angle, time to sweep.
  * @return none.
- **/
+ */
 void SerialServo::sweepAngle(uint8_t _ch, uint16_t _deg, uint16_t _time,
                              bool _inverted) {
   if(!isValidChannel(_ch)) {
@@ -253,7 +253,7 @@ void SerialServo::sweepAngle(uint8_t _ch, uint16_t _deg, uint16_t _time,
  *
  * @param channel index, time to wait.
  * @return none.
- **/
+ */
 void SerialServo::wait(uint8_t _ch, uint16_t _time) {
   if(!isValidChannel(_ch)) {
     return;
@@ -270,7 +270,7 @@ void SerialServo::wait(uint8_t _ch, uint16_t _time) {
  *
  * @param channel index.
  * @return min pulse width.
- **/
+ */
 uint16_t SerialServo::readMinWidth(uint8_t _ch, bool _inverted) {
   if(!isValidChannel(_ch)) {
     return 0;
@@ -286,7 +286,7 @@ uint16_t SerialServo::readMinWidth(uint8_t _ch, bool _inverted) {
  *
  * @param channel index.
  * @return max pulse width.
- **/
+ */
 uint16_t SerialServo::readMaxWidth(uint8_t _ch, bool _inverted) {
   if(!isValidChannel(_ch)) {
     return 0;
@@ -302,7 +302,7 @@ uint16_t SerialServo::readMaxWidth(uint8_t _ch, bool _inverted) {
  *
  * @param channel index.
  * @return false if position is reached, false otherwise.
- **/
+ */
 bool SerialServo::isMoving(uint8_t _ch) {
   if(!isValidChannel(_ch)) {
     return false;
@@ -315,7 +315,7 @@ bool SerialServo::isMoving(uint8_t _ch) {
  *
  * @param none.
  * @return none.
- **/
+ */
 void SerialServo::enableSequence() {
   sequence = true;
 }
@@ -325,7 +325,7 @@ void SerialServo::enableSequence() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void SerialServo::disableSequence() {
   sequence = false;
 }
@@ -335,7 +335,7 @@ void SerialServo::disableSequence() {
  *
  * @param channel index, angle.
  * @return microseconds.
- **/
+ */
 inline uint16_t SerialServo::raw_degToUs(const uint8_t &_ch,
                                          const uint16_t &_deg) {
   return (_deg - MIN_SERVO_ANGLE) *
@@ -349,7 +349,7 @@ inline uint16_t SerialServo::raw_degToUs(const uint8_t &_ch,
  *
  * @param channel index, microseconds.
  * @return angle.
- **/
+ */
 inline uint16_t SerialServo::raw_usToDeg(const uint8_t &_ch,
                                          const uint16_t &_us) {
   uint8_t _readus = raw_readMinWidth(_ch);
@@ -364,7 +364,7 @@ inline uint16_t SerialServo::raw_usToDeg(const uint8_t &_ch,
  *
  * @param microseconds.
  * @return constrained microseconds.
- **/
+ */
 inline uint16_t SerialServo::raw_validWidth(const uint8_t &_ch,
                                             const uint16_t &_us) {
   uint8_t _readus = raw_readMinWidth(_ch);
@@ -383,7 +383,7 @@ inline uint16_t SerialServo::raw_validWidth(const uint8_t &_ch,
  *
  * @param angle.
  * @return constrained angle.
- **/
+ */
 inline uint16_t SerialServo::raw_validAngle(const uint8_t &_ch,
                                             const uint16_t &_deg) {
   if(_deg < MIN_SERVO_ANGLE) {
@@ -400,7 +400,7 @@ inline uint16_t SerialServo::raw_validAngle(const uint8_t &_ch,
  *
  * @param microseconds.
  * @return inverted microseconds.
- **/
+ */
 inline uint16_t SerialServo::raw_invertWidth(const uint8_t &_ch,
                                              const uint16_t &_us) {
   return raw_readMaxWidth(_ch) + raw_readMinWidth(_ch) - _us;
@@ -411,7 +411,7 @@ inline uint16_t SerialServo::raw_invertWidth(const uint8_t &_ch,
  *
  * @param angle.
  * @return inverted angle.
- **/
+ */
 inline uint16_t SerialServo::raw_invertAngle(const uint8_t &_ch,
                                              const uint16_t &_deg) {
   return MAX_SERVO_ANGLE + MIN_SERVO_ANGLE - _deg;
@@ -422,7 +422,7 @@ inline uint16_t SerialServo::raw_invertAngle(const uint8_t &_ch,
  *
  * @param channel index, pulse width to set.
  * @return none.
- **/
+ */
 inline void SerialServo::raw_writeWidth(const uint8_t &_ch,
                                         const uint16_t &_us) {
   data[_ch].updateDisabled = true;
@@ -441,7 +441,7 @@ inline void SerialServo::raw_writeWidth(const uint8_t &_ch,
  *
  * @param channel index.
  * @return channel pulse width.
- **/
+ */
 inline uint16_t SerialServo::raw_readWidth(const uint8_t &_ch) {
   return data[_ch].pulseTicks;
 }
@@ -452,7 +452,7 @@ inline uint16_t SerialServo::raw_readWidth(const uint8_t &_ch) {
  *
  * @param channel index, pulse width, sweep time.
  * @return none.
- **/
+ */
 inline void SerialServo::raw_sweepWidth(const uint8_t &_ch, const uint16_t &_us,
                                         const uint16_t &_time) {
   data[_ch].updateDisabled = true;
@@ -483,7 +483,7 @@ inline void SerialServo::raw_sweepWidth(const uint8_t &_ch, const uint16_t &_us,
  *
  * @param channel index, wait time.
  * @return none.
- **/
+ */
 inline void SerialServo::raw_wait(const uint8_t &_ch, const uint16_t &_time) {
   data[_ch].updateDisabled = true;
   
@@ -507,7 +507,7 @@ inline void SerialServo::raw_wait(const uint8_t &_ch, const uint16_t &_time) {
  *
  * @param channel index.
  * @return min pulse width.
- **/
+ */
 inline uint16_t SerialServo::raw_readMinWidth(const uint8_t &_ch) {
   return pgm_read_word_near(&(bound[_ch][BOUND_MIN]));
 }
@@ -517,7 +517,7 @@ inline uint16_t SerialServo::raw_readMinWidth(const uint8_t &_ch) {
  *
  * @param channel index.
  * @return max pulse width.
- **/
+ */
 inline uint16_t SerialServo::raw_readMaxWidth(const uint8_t &_ch) {
   return pgm_read_word_near(&(bound[_ch][BOUND_MAX]));
 }
@@ -527,7 +527,7 @@ inline uint16_t SerialServo::raw_readMaxWidth(const uint8_t &_ch) {
  *
  * @param none.
  * @return none.
- **/
+ */
 inline void SerialServo::raw_movementCheck() {
   static uint8_t _ch = SERIAL_SERVO_BANKA_LOW;
   
@@ -562,7 +562,7 @@ inline void SerialServo::raw_movementCheck() {
  *
  * @param none.
  * @return none.
- **/
+ */
 inline void SerialServo::raw_incrementCalculator() {
   static bool _block = SERIAL_SERVO_BANKA;
   static uint8_t _actual_ch[SERIAL_SERVO_BANKS];
@@ -583,7 +583,7 @@ inline void SerialServo::raw_incrementCalculator() {
  *
  * @param none.
  * @return none.
- **/
+ */
  
 void SerialServo::servoRoutine() {
   raw_movementCheck();
@@ -599,7 +599,7 @@ void SerialServo::servoRoutine() {
  *
  * @param none.
  * @return none.
- **/
+ */
  
 #define raw_interrupt(__block, __block_low, __block_upp, __timer_reg, __pin_reg, __pulse_pin, __reset_pin) {\
   static uint8_t _pin_to_pulse = __reset_pin;                                  \
@@ -633,7 +633,7 @@ void SerialServo::servoRoutine() {
  *
  * @param none.
  * @return none.
- **/
+ */
 inline void SerialServo::OCR1A_ISR() {
   /*static uint32_t _time = micros();
   uint32_t _time2 = micros();
@@ -656,7 +656,7 @@ inline void SerialServo::OCR1A_ISR() {
  *
  * @param none.
  * @return none.
- **/
+ */
  
 inline void SerialServo::OCR1B_ISR() {
   raw_interrupt(SERIAL_SERVO_BANKB,

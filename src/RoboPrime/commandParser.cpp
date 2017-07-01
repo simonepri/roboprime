@@ -27,7 +27,7 @@
 /**
  * parser struct is located in SRAM momery and store information about the parsed
  * command, the struct is cleared after each command is successfully executed.
- **/
+ */
 cmd_t
   CommandParser::parser;
 
@@ -36,7 +36,7 @@ cmd_t
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::begin() {
   parser.firstCode = DEFAULT_CMD_IDX;
   parser.activeCode = DEFAULT_CMD_IDX;
@@ -50,7 +50,7 @@ void CommandParser::begin() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseSerial() {
   if(!parser.isBusy) {
     if(Serial.available() > 0) {
@@ -67,7 +67,7 @@ void CommandParser::parseSerial() {
  *
  * @param character.
  * @return none.
- **/
+ */
 void CommandParser::parseByte(char _b) {
   if(_b == ' ') {
     parser.activeCode = DEFAULT_CMD_IDX;
@@ -111,7 +111,7 @@ void CommandParser::parseByte(char _b) {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCode() {
   switch(parser.firstCode) {
     case _S_: parseCodeS(); return;
@@ -125,7 +125,7 @@ void CommandParser::parseCode() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeS() {
   switch(parser.valueCode[_S_]) {
     case 0: parseCodeS0(); return;
@@ -143,7 +143,7 @@ void CommandParser::parseCodeS() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeS0() {
   if(usedCode(parser.valueCode[_L_])) {
     BodyMovement::setDefault(HF_L, parser.valueCode[_L_]);
@@ -163,7 +163,7 @@ void CommandParser::parseCodeS0() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeS1() {
   if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) || 
      !usedCode(parser.valueCode[_A_])) {
@@ -186,7 +186,7 @@ void CommandParser::parseCodeS1() {
  * 
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeS2() {
   if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) ||
      !usedCode(parser.valueCode[_A_])  || !usedCode(parser.valueCode[_T_])) {
@@ -211,7 +211,7 @@ void CommandParser::parseCodeS2() {
  * 
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeS3() {
   if(!usedCode(parser.valueCode[_A_]) ||
      !usedCode(parser.valueCode[_D_]) ||
@@ -229,7 +229,7 @@ void CommandParser::parseCodeS3() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeQ() {
   switch(parser.valueCode[_Q_]) {
     case 0: parseCodeQ0(); return;
@@ -245,7 +245,7 @@ void CommandParser::parseCodeQ() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeQ0() {
   if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) ||
      !usedCode(parser.valueCode[_D_])) {
@@ -282,7 +282,7 @@ void CommandParser::parseCodeQ0() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeQ1() {
   if(!usedCode(parser.valueCode[_A_]) ||
      !usedCode(parser.valueCode[_D_]) ||
@@ -296,7 +296,7 @@ void CommandParser::parseCodeQ1() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeC() {
   switch(parser.valueCode[_C_]) {
     case 0: parseCodeC0(); return;
@@ -310,7 +310,7 @@ void CommandParser::parseCodeC() {
  *
  * @param none.
  * @return none.
- **/
+ */
 void CommandParser::parseCodeC0() {
   if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_]))
      || !usedCode(parser.valueCode[_W_])) {

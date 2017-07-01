@@ -25,21 +25,21 @@
 /**
  * anim struct is located in SRAM momery and store information about the current
  * applied animation, the struct is cleared after each command is successfully executed.
- **/
+ */
 anim_t
   AnimationStore::anim;
 
 /**
  * "steps_size" array is located in FLASH memory and store information about the
  * number of steps of each animation.
- **/
+ */
 steps_size_t
   AnimationStore::steps_size[ANIM_SIZE][ANIM_STEPS_DIV] = ANIM_STEPS_SIZE;
 
 /**
  * "steps_*" arrays are located in FLASH memory and they store information about the
  * bodypart to move on each step for each animation.
- **/
+ */
 steps_info_t
   AnimationStore::steps_FWW[ANIM_FWW_SIZE][ANIM_STEPS_INFO] = ANIM_FWW_STEPS;
 steps_info_t
@@ -59,7 +59,7 @@ steps_info_t
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::begin() {
   clearAnimation(true);
 }
@@ -68,7 +68,7 @@ void AnimationStore::begin() {
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::applyAnimation(uint8_t _anim, uint16_t _dist,
                                     uint16_t _time, uint16_t _angle) {
   BodyMovement::setSequence(true);
@@ -88,7 +88,7 @@ void AnimationStore::applyAnimation(uint8_t _anim, uint16_t _dist,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::clearAnimation(bool _force) {
   if(_force) {
     BodyMovement::setSequence(false);
@@ -109,7 +109,7 @@ void AnimationStore::clearAnimation(bool _force) {
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::executeAnimation() {
   static bool _half;
   static uint8_t _idx;
@@ -133,7 +133,7 @@ void AnimationStore::executeAnimation() {
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle,
                               uint16_t &_time) {
   if(!anim.endingAnimation && anim.loopAnimation == 0 && anim.stepAnimation == anim.startAnimation) {
@@ -167,7 +167,7 @@ void AnimationStore::nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepFWW(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_FWW[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -181,7 +181,7 @@ void AnimationStore::nextStepFWW(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepBWW(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_BWW[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -195,7 +195,7 @@ void AnimationStore::nextStepBWW(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepSWR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_SWR[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -209,7 +209,7 @@ void AnimationStore::nextStepSWR(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepSWL(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_SWL[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -223,7 +223,7 @@ void AnimationStore::nextStepSWL(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                   uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_CWSR[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -237,7 +237,7 @@ void AnimationStore::nextStepCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepCCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                    uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_CCWSR[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -251,7 +251,7 @@ void AnimationStore::nextStepCCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                   uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_CWCW[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -265,7 +265,7 @@ void AnimationStore::nextStepCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepCCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                    uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_CCWCW[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -279,7 +279,7 @@ void AnimationStore::nextStepCCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepSIT(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_SIT[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -293,7 +293,7 @@ void AnimationStore::nextStepSIT(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepHR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_HR[anim.stepAnimation][ANIM_STEPS_HF]));
@@ -307,7 +307,7 @@ void AnimationStore::nextStepHR(bool &_half, uint8_t &_idx, uint16_t &_angle,
  *
  * @param .
  * @return none.
- **/
+ */
 void AnimationStore::nextStepFOR(bool &_half, uint8_t &_idx, uint16_t &_angle,
                                  uint16_t &_time) {
   _half = pgm_read_word_near(&(steps_FOR[anim.stepAnimation][ANIM_STEPS_HF]));
