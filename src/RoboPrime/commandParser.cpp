@@ -86,7 +86,7 @@ void CommandParser::parseByte(char _b) {
       parser.firstCode = parser.activeCode;
     }
   }
-  else if(_b == '\n' || _b == '\r' || _b == '\r\n') {
+  else if(_b == '\n' || _b == '\r') {
     parseCode();
     if(parser.isBusy) {
       return;
