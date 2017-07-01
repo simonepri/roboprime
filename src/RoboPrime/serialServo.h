@@ -115,10 +115,11 @@ class SerialServo {
     
     static void OCR1A_ISR();
     static void OCR1B_ISR();
+    
   private:
     // No-one have to create an istance of this class as we use it as
     // static method, so we keep constructor as private.
-    SerialServo();                                              
+    SerialServo();
 
     //All raw_ function declared here do not check the validity of the passed
     //argument for speed reasons. Are supposed to be used only interneally by 
@@ -142,15 +143,11 @@ class SerialServo {
     static void raw_movementCheck();
     static void raw_incrementCalculator();
     
-    static bool
-      sequence;
-    static volatile uint16_t 
-      channel[SERIAL_SERVO_BANKS];
-    static volatile uint16_t 
-      period[SERIAL_SERVO_BANKS];
+    static bool sequence;
+    static volatile uint16_t channel[SERIAL_SERVO_BANKS];
+    static volatile uint16_t period[SERIAL_SERVO_BANKS];
     static servo_data_t data[SERIAL_SERVO_CHANNELS];
-    static const PROGMEM uint16_t
-      bound[SERIAL_SERVO_CHANNELS][BOUND_SIZE];
+    static const PROGMEM uint16_t bound[SERIAL_SERVO_CHANNELS][BOUND_SIZE];
 };
 
 #endif
