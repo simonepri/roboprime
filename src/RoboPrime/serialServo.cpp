@@ -431,7 +431,7 @@ inline void SerialServo::raw_writeWidth(const uint8_t &_ch,
 
   data[_ch].actionTicks = 0;
   data[_ch].eachusTicks = 0;
-  data[_ch].deltaTicks = usToTicks(_us) - _width;        // Save the wanted pulse width.
+  data[_ch].deltaTicks = usToTicks(_us) - _width; // Save the wanted pulse width.
   
   data[_ch].pulseReached = false;       // Set the pulse width as not reached.
 }

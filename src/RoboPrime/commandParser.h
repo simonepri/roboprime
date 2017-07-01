@@ -33,7 +33,6 @@
  *
  * Implemented C codes:
  * C0 - Calibrate servo bound.
- *
  */
  
 #ifndef _COMMAND_PARSER_H
