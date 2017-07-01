@@ -1,0 +1,32 @@
+
+  
+	switch(anim.stepAnimation) {
+		case 0: _half = HF_R; _idx = PART_ANKLE_X_ROT; _angle = 800; _time = 500; break;
+		case 1: _half = HF_R; _idx = PART_KNEE_X_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 2: _half = HF_R; _idx = PART_KNEE_X_ROT; _angle = 1500; _time = 500; break;
+		case 3: _half = HF_L; _idx = PART_KNEE_X_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 4: _half = HF_L; _idx = PART_KNEE_X_ROT; _angle = 1100; _time = 500; break;
+		case 5: _half = HF_R; _idx = PART_HIP_Y_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 6: _half = HF_R; _idx = PART_HIP_Y_ROT; _angle = 1100; _time = 500; break;
+		case 7: _half = HF_L; _idx = PART_HIP_Y_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 8: _half = HF_L; _idx = PART_HIP_Y_ROT; _angle = 700; _time = 500; break;
+		case 9: _half = HF_R; _idx = PART_ANKLE_X_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 10: _half = HF_R; _idx = PART_ANKLE_X_ROT; _angle = 900; _time = 500; break;
+		case 11: _half = HF_L; _idx = PART_ANKLE_X_ROT; _angle = INVALID_BODY_POS; _time = 1500; break;
+		case 12: _half = HF_L; _idx = PART_ANKLE_X_ROT; _angle = 800; _time = 500; break;
+		case 13: _half = HF_R; _idx = PART_KNEE_X_ROT; _angle = INVALID_BODY_POS; _time = 1000; break;
+		case 14: _half = HF_R; _idx = PART_KNEE_X_ROT; _angle = 1100; _time = 500; break;
+		case 15: _half = HF_L; _idx = PART_KNEE_X_ROT; _angle = INVALID_BODY_POS; _time = 1000; break;
+		case 16: _half = HF_L; _idx = PART_KNEE_X_ROT; _angle = 1500; _time = 500; break;
+		case 17: _half = HF_L; _idx = PART_HIP_Y_ROT; _angle = INVALID_BODY_POS; _time = 1000; break;
+		case 18: _half = HF_L; _idx = PART_HIP_Y_ROT; _angle = 1100; _time = 500; break;
+		case 19: _half = HF_R; _idx = PART_HIP_Y_ROT; _angle = INVALID_BODY_POS; _time = 1000; break;
+		case 20: _half = HF_R; _idx = PART_HIP_Y_ROT; _angle = 700; _time = 500; break;
+		case 21: _half = HF_L; _idx = PART_ANKLE_X_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 22: _half = HF_L; _idx = PART_ANKLE_X_ROT; _angle = 900; _time = 500; break;
+		case 23: _half = HF_R; _idx = PART_ANKLE_X_ROT; _angle = INVALID_BODY_POS; _time = 1500; break;
+		case 24: _half = HF_R; _idx = PART_KNEE_X_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 25: _half = HF_R; _idx = PART_HIP_Y_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 26: _half = HF_L; _idx = PART_KNEE_X_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+		case 27: _half = HF_L; _idx = PART_HIP_Y_ROT; _angle = INVALID_BODY_POS; _time = 500; break;
+	}
