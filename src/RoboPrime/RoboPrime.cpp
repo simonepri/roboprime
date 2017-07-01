@@ -24,20 +24,20 @@
 #include "animationStore.h"
 
 void setup() {
-	Serial.begin(SERIAL_BAUD);
-	SerialServo::begin();
-	BodyMovement::begin();
-	AnimationStore::begin();
-	CommandParser::begin();
+  Serial.begin(SERIAL_BAUD);
+  SerialServo::begin();
+  BodyMovement::begin();
+  AnimationStore::begin();
+  CommandParser::begin();
 }
 
 void loop() {
-	/*static uint32_t _time;
-	uint32_t _time2 = micros();
-	Serial.println(_time2-_time);
-	_time = _time2;*/
-	SerialServo::servoRoutine();
-	BodyMovement::movementPlanner();
-	AnimationStore::executeAnimation();
-	CommandParser::parseSerial();
+  /*static uint32_t _time;
+  uint32_t _time2 = micros();
+  Serial.println(_time2-_time);
+  _time = _time2;*/
+  SerialServo::servoRoutine();
+  BodyMovement::movementPlanner();
+  AnimationStore::executeAnimation();
+  CommandParser::parseSerial();
 }

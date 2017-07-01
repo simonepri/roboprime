@@ -75,37 +75,37 @@
 #define _Z_ alpIdx('Z')
 
 typedef struct cmd_t {
-	bool isBusy;
-	uint8_t firstCode, activeCode;
-	uint16_t valueCode[_Z_ + 1];
+  bool isBusy;
+  uint8_t firstCode, activeCode;
+  uint16_t valueCode[_Z_ + 1];
 };
 
 class CommandParser {
-	public:
-		static void begin();
-		static void parseSerial();
-	private:
-		// No-one have to create an istance of this class as we use it as
-		// static method, so we keep constructor as private.
-		CommandParser();
-		
-		static void parseByte(char _b);
-		static void parseCode();
-		
-		static void parseCodeS();
-		static void parseCodeS0();
-		static void parseCodeS1();
-		static void parseCodeS2();
-		static void parseCodeS3();
-		
-		static void parseCodeQ();
-		static void parseCodeQ0();
-		static void parseCodeQ1();
+  public:
+    static void begin();
+    static void parseSerial();
+  private:
+    // No-one have to create an istance of this class as we use it as
+    // static method, so we keep constructor as private.
+    CommandParser();
     
-		static void parseCodeC();
-		static void parseCodeC0();
-		
-		static cmd_t parser;
+    static void parseByte(char _b);
+    static void parseCode();
+    
+    static void parseCodeS();
+    static void parseCodeS0();
+    static void parseCodeS1();
+    static void parseCodeS2();
+    static void parseCodeS3();
+    
+    static void parseCodeQ();
+    static void parseCodeQ0();
+    static void parseCodeQ1();
+    
+    static void parseCodeC();
+    static void parseCodeC0();
+    
+    static cmd_t parser;
 };
 
 #endif

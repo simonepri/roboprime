@@ -61,11 +61,11 @@ block_t
  * @return none.
  **/
 void BodyMovement::begin() {
-	setDefault();
-	
-	for(uint8_t _idx = 0; _idx < HF_NUM; _idx++) {
-		head[HF_R][_idx] = head[HF_L][_idx] = 0;
-	}
+  setDefault();
+  
+  for(uint8_t _idx = 0; _idx < HF_NUM; _idx++) {
+    head[HF_R][_idx] = head[HF_L][_idx] = 0;
+  }
 }
 
 /**
@@ -75,7 +75,7 @@ void BodyMovement::begin() {
  * @return true if the queue is empty, false otherwise.
  **/
 inline bool BodyMovement::isValidBodypart(uint8_t _idx) {
-	return (_idx < HF_NUM);
+  return (_idx < HF_NUM);
 }
 
 
@@ -86,10 +86,10 @@ inline bool BodyMovement::isValidBodypart(uint8_t _idx) {
  * @return none.
  **/
 void BodyMovement::setPos(bool _half, uint8_t _idx, uint16_t _angle) {
-	if(!isValidBodypart(_idx)) {
-		return;
-	}
-	raw_setPos(_half, _idx, _angle);
+  if(!isValidBodypart(_idx)) {
+    return;
+  }
+  raw_setPos(_half, _idx, _angle);
 }
 
 /**
@@ -101,11 +101,11 @@ void BodyMovement::setPos(bool _half, uint8_t _idx, uint16_t _angle) {
  **/
 void BodyMovement::setSweep(bool _half, uint8_t _idx, uint16_t _angle,
                             uint16_t _time) {
-	if(!isValidBodypart(_idx)) {
-		return;
-	}
-	_angle = raw_validAngle(_half, _idx, _angle);
-	raw_setSweep(_half, _idx, _angle, _time);
+  if(!isValidBodypart(_idx)) {
+    return;
+  }
+  _angle = raw_validAngle(_half, _idx, _angle);
+  raw_setSweep(_half, _idx, _angle, _time);
 }
 
 /**
@@ -115,15 +115,15 @@ void BodyMovement::setSweep(bool _half, uint8_t _idx, uint16_t _angle,
  * @return none.
  **/
 void BodyMovement::setDefault() {
-	uint16_t _deg;
-	bool _half;
-	for(uint8_t _idx = 0; _idx < HF_NUM; _idx++) {
-		_deg = raw_getDefaultPos(_idx);
-		_half = HF_R;
-		raw_setPos(_half, _idx, _deg);
-		_half = HF_L;
-		raw_setPos(_half, _idx, _deg);
-	}
+  uint16_t _deg;
+  bool _half;
+  for(uint8_t _idx = 0; _idx < HF_NUM; _idx++) {
+    _deg = raw_getDefaultPos(_idx);
+    _half = HF_R;
+    raw_setPos(_half, _idx, _deg);
+    _half = HF_L;
+    raw_setPos(_half, _idx, _deg);
+  }
 }
 
 /**
@@ -133,11 +133,11 @@ void BodyMovement::setDefault() {
  * @return none.
  **/
 void BodyMovement::setDefault(bool _half, uint8_t _idx) {
-	if(!isValidBodypart(_idx)) {
-		return;
-	}
-	uint16_t _deg = raw_getDefaultPos(_idx);
-	raw_setPos(_half, _idx, _deg);
+  if(!isValidBodypart(_idx)) {
+    return;
+  }
+  uint16_t _deg = raw_getDefaultPos(_idx);
+  raw_setPos(_half, _idx, _deg);
 }
 
 /**
@@ -147,11 +147,11 @@ void BodyMovement::setDefault(bool _half, uint8_t _idx) {
  * @return none.
  **/
 void BodyMovement::setSequence(bool _status) {
-	if(_status) {
-		SerialServo::enableSequence();
-		return;
-	}
-	SerialServo::disableSequence();
+  if(_status) {
+    SerialServo::enableSequence();
+    return;
+  }
+  SerialServo::disableSequence();
 }
 
 /**
@@ -161,10 +161,10 @@ void BodyMovement::setSequence(bool _status) {
  * @return none.
  **/
 void BodyMovement::setWait(bool _half, uint8_t _idx, uint16_t _time) {
-	if(!isValidBodypart(_idx)) {
-		return;
-	}
-	raw_setWait(_half, _idx, _time);
+  if(!isValidBodypart(_idx)) {
+    return;
+  }
+  raw_setWait(_half, _idx, _time);
 }
 
 /**
@@ -174,10 +174,10 @@ void BodyMovement::setWait(bool _half, uint8_t _idx, uint16_t _time) {
  * @return channel angle.
  **/
 uint16_t BodyMovement::getPos(bool _half, uint8_t _idx) {
-	if(!isValidBodypart(_idx)) {
-		return 0;
-	}
-	return raw_getPos(_half, _idx);
+  if(!isValidBodypart(_idx)) {
+    return 0;
+  }
+  return raw_getPos(_half, _idx);
 }
 
 /**
@@ -187,10 +187,10 @@ uint16_t BodyMovement::getPos(bool _half, uint8_t _idx) {
  * @return channel angle.
  **/
 uint16_t BodyMovement::getMinPos(uint8_t _idx) {
-	if(!isValidBodypart(_idx)) {
-		return 0;
-	}
-	return raw_getMinPos(_idx);
+  if(!isValidBodypart(_idx)) {
+    return 0;
+  }
+  return raw_getMinPos(_idx);
 }
 
 /**
@@ -200,10 +200,10 @@ uint16_t BodyMovement::getMinPos(uint8_t _idx) {
  * @return channel angle.
  **/
 uint16_t BodyMovement::getDefaultPos(uint8_t _idx) {
-	if(!isValidBodypart(_idx)) {
-		return 0;
-	}
-	return raw_getDefaultPos(_idx);
+  if(!isValidBodypart(_idx)) {
+    return 0;
+  }
+  return raw_getDefaultPos(_idx);
 }
 
 /**
@@ -213,10 +213,10 @@ uint16_t BodyMovement::getDefaultPos(uint8_t _idx) {
  * @return channel angle.
  **/
 uint16_t BodyMovement::getMaxPos(uint8_t _idx) {
-	if(!isValidBodypart(_idx)) {
-		return 0;
-	}
-	return raw_getMaxPos(_idx);
+  if(!isValidBodypart(_idx)) {
+    return 0;
+  }
+  return raw_getMaxPos(_idx);
 }
 
 /**
@@ -226,10 +226,10 @@ uint16_t BodyMovement::getMaxPos(uint8_t _idx) {
  * @return true if the bodyport is moving.
  **/
 bool BodyMovement::isMoving(bool _half, uint8_t _idx) {
-	if(!isValidBodypart(_idx)) {
-		return false;
-	}
-	return raw_isMoving(_half, _idx);
+  if(!isValidBodypart(_idx)) {
+    return false;
+  }
+  return raw_isMoving(_half, _idx);
 }
 
 /**
@@ -241,11 +241,11 @@ bool BodyMovement::isMoving(bool _half, uint8_t _idx) {
  **/
 bool BodyMovement::pushQueue(bool _half, uint8_t _idx, uint16_t _angle,
                              uint16_t _time) {
-	if(!isValidBodypart(_idx) || raw_isQueueFull(_half, _idx)) {
-		return false;
-	}
-	raw_pushQueue(_half, _idx, _angle, _time);
-	return true;
+  if(!isValidBodypart(_idx) || raw_isQueueFull(_half, _idx)) {
+    return false;
+  }
+  raw_pushQueue(_half, _idx, _angle, _time);
+  return true;
 }
 
 /**
@@ -255,11 +255,11 @@ bool BodyMovement::pushQueue(bool _half, uint8_t _idx, uint16_t _angle,
  * @return none.
  **/
 bool BodyMovement::popQueue(bool _half, uint8_t _idx) {
-	if(!isValidBodypart(_idx) || isQueueEmpty(_half, _idx)) {
-		return false;
-	}
-	raw_popQueue(_half, _idx);
-	return true;
+  if(!isValidBodypart(_idx) || isQueueEmpty(_half, _idx)) {
+    return false;
+  }
+  raw_popQueue(_half, _idx);
+  return true;
 }
 
 /**
@@ -269,10 +269,10 @@ bool BodyMovement::popQueue(bool _half, uint8_t _idx) {
  * @return true if the queue is full, false otherwise.
  **/
 bool BodyMovement::isQueueFull(bool _half, uint8_t _idx) {
-	if(!isValidBodypart(_idx)) {
-		return true;
-	}
-	return raw_isQueueFull(_half, _idx);
+  if(!isValidBodypart(_idx)) {
+    return true;
+  }
+  return raw_isQueueFull(_half, _idx);
 }
 
 /**
@@ -282,10 +282,10 @@ bool BodyMovement::isQueueFull(bool _half, uint8_t _idx) {
  * @return true if the queue is empty, false otherwise.
  **/
 bool BodyMovement::isQueueEmpty(bool _half, uint8_t _idx) {
-	if(!isValidBodypart(_idx)) {
-		return false;
-	}
-	return raw_isQueueEmpty(_half, _idx);
+  if(!isValidBodypart(_idx)) {
+    return false;
+  }
+  return raw_isQueueEmpty(_half, _idx);
 }
 
 /**
@@ -297,35 +297,35 @@ bool BodyMovement::isQueueEmpty(bool _half, uint8_t _idx) {
 inline uint16_t BodyMovement::raw_validAngle(const bool &_half,
                                              const uint8_t &_idx,
                                              const uint16_t &_angle) {
-	uint16_t _min = raw_getMinPos(_idx);
-	uint16_t _max = raw_getMaxPos(_idx);
-	int8_t _offset = pgm_read_word_near(&(offset[_idx][_half]));
-	if(_angle < _min) {
-		if(_offset > 0) {
-			return _min + _offset;
-		}
-		return _min;
-	}
-	if(_angle > _max) {
-		if(_offset < 0) {
-			return _max + _offset;
-		}
-		return _max;
-	}
-	if(_offset > 0) {
-		if(_angle + _offset > _max) {
-			return _max;
-		}
-	}
-	else {
-		if(-_offset > _angle) {
-			return _min;
-		}
-		if(_angle + _offset < _min) {
-			return _min;
-		}
-	}
-	return _angle + _offset;
+  uint16_t _min = raw_getMinPos(_idx);
+  uint16_t _max = raw_getMaxPos(_idx);
+  int8_t _offset = pgm_read_word_near(&(offset[_idx][_half]));
+  if(_angle < _min) {
+    if(_offset > 0) {
+      return _min + _offset;
+    }
+    return _min;
+  }
+  if(_angle > _max) {
+    if(_offset < 0) {
+      return _max + _offset;
+    }
+    return _max;
+  }
+  if(_offset > 0) {
+    if(_angle + _offset > _max) {
+      return _max;
+    }
+  }
+  else {
+    if(-_offset > _angle) {
+      return _min;
+    }
+    if(_angle + _offset < _min) {
+      return _min;
+    }
+  }
+  return _angle + _offset;
 }
 
 /**
@@ -336,12 +336,12 @@ inline uint16_t BodyMovement::raw_validAngle(const bool &_half,
  **/
 inline void BodyMovement::raw_setPos(const bool &_half, const uint8_t &_idx,
                                      const uint16_t &_angle) {
-	uint16_t _anglefix = raw_validAngle(_half, _idx, _angle);
-	if(_half) {
-		SerialServo::writeAngle(HF_NUM + _idx, _anglefix, _half);
-		return;
-	}
-	SerialServo::writeAngle(_idx, _anglefix);
+  uint16_t _anglefix = raw_validAngle(_half, _idx, _angle);
+  if(_half) {
+    SerialServo::writeAngle(HF_NUM + _idx, _anglefix, _half);
+    return;
+  }
+  SerialServo::writeAngle(_idx, _anglefix);
 }
 
 /**
@@ -352,12 +352,12 @@ inline void BodyMovement::raw_setPos(const bool &_half, const uint8_t &_idx,
  **/
 inline void BodyMovement::raw_setSweep(const bool &_half, const uint8_t &_idx,
                                        const uint16_t &_angle,
-																			 const uint16_t &_time) {
-	if(_half) {
-		SerialServo::sweepAngle(HF_NUM + _idx, _angle, _time, _half);
-		return;
-	}
-	SerialServo::sweepAngle(_idx, _angle, _time);
+                                       const uint16_t &_time) {
+  if(_half) {
+    SerialServo::sweepAngle(HF_NUM + _idx, _angle, _time, _half);
+    return;
+  }
+  SerialServo::sweepAngle(_idx, _angle, _time);
 }
 
 /**
@@ -368,7 +368,7 @@ inline void BodyMovement::raw_setSweep(const bool &_half, const uint8_t &_idx,
  **/
 inline void BodyMovement::raw_setDefault(const bool &_half,
                                          const uint8_t &_idx) {
-	raw_setPos(_half, _idx, raw_getDefaultPos(_idx));
+  raw_setPos(_half, _idx, raw_getDefaultPos(_idx));
 }
 
 /**
@@ -379,11 +379,11 @@ inline void BodyMovement::raw_setDefault(const bool &_half,
  **/
 inline void BodyMovement::raw_setWait(const bool &_half, const uint8_t &_idx,
                                       const uint16_t &_time) {
-	if(_half) {
-		SerialServo::wait(HF_NUM + _idx, _time);
-		return;
-	}
-	SerialServo::wait(_idx, _time);
+  if(_half) {
+    SerialServo::wait(HF_NUM + _idx, _time);
+    return;
+  }
+  SerialServo::wait(_idx, _time);
 }
 
 /**
@@ -394,10 +394,10 @@ inline void BodyMovement::raw_setWait(const bool &_half, const uint8_t &_idx,
  **/
 inline uint16_t BodyMovement::raw_getPos(const bool &_half,
                                          const uint8_t &_idx) {
-	if(_half) {
-		return SerialServo::readAngle(HF_NUM + _idx, _half);
-	}
-	return SerialServo::readAngle(_idx);
+  if(_half) {
+    return SerialServo::readAngle(HF_NUM + _idx, _half);
+  }
+  return SerialServo::readAngle(_idx);
 }
 
 /**
@@ -407,7 +407,7 @@ inline uint16_t BodyMovement::raw_getPos(const bool &_half,
  * @return channel angle.
  **/
 inline uint16_t BodyMovement::raw_getMinPos(const uint8_t &_idx) {
-	return pgm_read_word_near(&(pos[_idx][POS_MIN]));
+  return pgm_read_word_near(&(pos[_idx][POS_MIN]));
 }
 
 /**
@@ -417,7 +417,7 @@ inline uint16_t BodyMovement::raw_getMinPos(const uint8_t &_idx) {
  * @return channel angle.
  **/
 inline uint16_t BodyMovement::raw_getDefaultPos(const uint8_t &_idx) {
-	return pgm_read_word_near(&(pos[_idx][POS_MED]));
+  return pgm_read_word_near(&(pos[_idx][POS_MED]));
 }
 
 /**
@@ -427,7 +427,7 @@ inline uint16_t BodyMovement::raw_getDefaultPos(const uint8_t &_idx) {
  * @return channel angle.
  **/
 inline uint16_t BodyMovement::raw_getMaxPos(const uint8_t &_idx) {
-	return pgm_read_word_near(&(pos[_idx][POS_MAX]));
+  return pgm_read_word_near(&(pos[_idx][POS_MAX]));
 }
 
 /**
@@ -437,10 +437,10 @@ inline uint16_t BodyMovement::raw_getMaxPos(const uint8_t &_idx) {
  * @return true if the bodyport is moving.
  **/
 inline bool BodyMovement::raw_isMoving(const bool &_half, const uint8_t &_idx) {
-	if(_half) {
-		return SerialServo::isMoving(HF_NUM + _idx);
-	}
-	return SerialServo::isMoving(_idx);
+  if(_half) {
+    return SerialServo::isMoving(HF_NUM + _idx);
+  }
+  return SerialServo::isMoving(_idx);
 }
  
 /**
@@ -451,10 +451,10 @@ inline bool BodyMovement::raw_isMoving(const bool &_half, const uint8_t &_idx) {
  **/
 inline void BodyMovement::raw_pushQueue(const bool &_half, const uint8_t &_idx,
                                         const uint16_t &_angle,
-																        const uint16_t &_time) {
-	queue[_half][_idx][head[_half][_idx]].movAngle = _angle;
-	queue[_half][_idx][head[_half][_idx]].movTime = _time;
-	head[_half][_idx] = nextQueue(head[_half][_idx]);
+                                        const uint16_t &_time) {
+  queue[_half][_idx][head[_half][_idx]].movAngle = _angle;
+  queue[_half][_idx][head[_half][_idx]].movTime = _time;
+  head[_half][_idx] = nextQueue(head[_half][_idx]);
 }
 
 /**
@@ -464,14 +464,14 @@ inline void BodyMovement::raw_pushQueue(const bool &_half, const uint8_t &_idx,
  * @return none.
  **/
 inline void BodyMovement::raw_popQueue(const bool &_half, const uint8_t &_idx) {
-	if(queue[_half][_idx][tail[_half][_idx]].movAngle == INVALID_BODY_POS) {
-		raw_setWait(_half, _idx, queue[_half][_idx][tail[_half][_idx]].movTime);
-	}
-	else {
-		raw_setSweep(_half, _idx, queue[_half][_idx][tail[_half][_idx]].movAngle, 
-	               queue[_half][_idx][tail[_half][_idx]].movTime);
-	}
-	tail[_half][_idx] = nextQueue(tail[_half][_idx]);
+  if(queue[_half][_idx][tail[_half][_idx]].movAngle == INVALID_BODY_POS) {
+    raw_setWait(_half, _idx, queue[_half][_idx][tail[_half][_idx]].movTime);
+  }
+  else {
+    raw_setSweep(_half, _idx, queue[_half][_idx][tail[_half][_idx]].movAngle, 
+                 queue[_half][_idx][tail[_half][_idx]].movTime);
+  }
+  tail[_half][_idx] = nextQueue(tail[_half][_idx]);
 }
 
 /**
@@ -482,7 +482,7 @@ inline void BodyMovement::raw_popQueue(const bool &_half, const uint8_t &_idx) {
  **/
 inline bool BodyMovement::raw_isQueueFull(const bool &_half,
                                           const uint8_t &_idx) {
-	return fullQueue(nextQueue(head[_half][_idx]), tail[_half][_idx]);
+  return fullQueue(nextQueue(head[_half][_idx]), tail[_half][_idx]);
 }
 
 /**
@@ -493,7 +493,7 @@ inline bool BodyMovement::raw_isQueueFull(const bool &_half,
  **/
 inline bool BodyMovement::raw_isQueueEmpty(const bool &_half,
                                            const uint8_t &_idx) {
-	return emptyQueue(head[_half][_idx], tail[_half][_idx]);
+  return emptyQueue(head[_half][_idx], tail[_half][_idx]);
 }
 
 /**
@@ -503,16 +503,16 @@ inline bool BodyMovement::raw_isQueueEmpty(const bool &_half,
  * @return none.
  **/
 void BodyMovement::movementPlanner() {
-	static uint8_t _idx = 0;
-	bool _half = false;
-	do {
-		if(!isMoving(_half, _idx) && !raw_isQueueEmpty(_half, _idx)) {
-			raw_popQueue(_half, _idx);
-		}
-		_half = !_half;
-	}
-	while(_half);
-	if(++_idx >= HF_NUM) {
-		_idx = 0;
-	}
+  static uint8_t _idx = 0;
+  bool _half = false;
+  do {
+    if(!isMoving(_half, _idx) && !raw_isQueueEmpty(_half, _idx)) {
+      raw_popQueue(_half, _idx);
+    }
+    _half = !_half;
+  }
+  while(_half);
+  if(++_idx >= HF_NUM) {
+    _idx = 0;
+  }
 }

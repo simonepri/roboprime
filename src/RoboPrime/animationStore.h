@@ -250,40 +250,40 @@
 }
 
 typedef struct anim_t {
-	bool busyAnimation, endingAnimation;
-	uint8_t activeAnimation, stepAnimation,
+  bool busyAnimation, endingAnimation;
+  uint8_t activeAnimation, stepAnimation,
           startAnimation, loopAnimation, endAnimation;
-	uint16_t distAnimation, timeAnimation, angleAnimation;
+  uint16_t distAnimation, timeAnimation, angleAnimation;
 };
 
 typedef const PROGMEM uint8_t steps_size_t;
 typedef const PROGMEM uint16_t steps_info_t;
 
 class AnimationStore {
-	public:
-		static void begin();
-		static void applyAnimation(uint8_t _anim, uint16_t _dist,
+  public:
+    static void begin();
+    static void applyAnimation(uint8_t _anim, uint16_t _dist,
                                uint16_t _time, uint16_t _angle = 0);
-		static void clearAnimation(bool _force = false);
-		static void executeAnimation();
-	private:
-		// No-one have to create an istance of this class as we use it as
-		// static method, so we keep constructor as private.
-		AnimationStore();
+    static void clearAnimation(bool _force = false);
+    static void executeAnimation();
+  private:
+    // No-one have to create an istance of this class as we use it as
+    // static method, so we keep constructor as private.
+    AnimationStore();
 
-		static void nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepFWW(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepBWW(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepSWR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepSWL(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepCCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepCCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepSIT(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepHR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static void nextStepFOR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
-		static anim_t anim;
+    static void nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepFWW(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepBWW(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepSWR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepSWL(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepCCWSR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepCCWCW(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepSIT(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepHR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static void nextStepFOR(bool &_half, uint8_t &_idx, uint16_t &_angle, uint16_t &_time);
+    static anim_t anim;
     static steps_size_t steps_size[ANIM_SIZE][3];
     static steps_info_t steps_FWW[ANIM_FWW_SIZE][4];
     static steps_info_t steps_BWW[ANIM_BWW_SIZE][4];

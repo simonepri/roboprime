@@ -38,11 +38,11 @@ cmd_t
  * @return none.
  **/
 void CommandParser::begin() {
-	parser.firstCode = DEFAULT_CMD_IDX;
-	parser.activeCode = DEFAULT_CMD_IDX;
-	for(uint8_t _cmd = _A_; _cmd <= _Z_; _cmd++) {
-		parser.valueCode[_cmd] = DEFAULT_CODE_VALUE;
-	}
+  parser.firstCode = DEFAULT_CMD_IDX;
+  parser.activeCode = DEFAULT_CMD_IDX;
+  for(uint8_t _cmd = _A_; _cmd <= _Z_; _cmd++) {
+    parser.valueCode[_cmd] = DEFAULT_CODE_VALUE;
+  }
 }
 
 /**
@@ -52,14 +52,14 @@ void CommandParser::begin() {
  * @return none.
  **/
 void CommandParser::parseSerial() {
-	if(!parser.isBusy) {
-		if(Serial.available() > 0) {
-			parseByte(Serial.read());
-		}
-	}
-	else {
-		parseByte('\n');
-	}
+  if(!parser.isBusy) {
+    if(Serial.available() > 0) {
+      parseByte(Serial.read());
+    }
+  }
+  else {
+    parseByte('\n');
+  }
 }
 
 /**
@@ -69,41 +69,41 @@ void CommandParser::parseSerial() {
  * @return none.
  **/
 void CommandParser::parseByte(char _b) {
-	if(_b == ' ') {
-		parser.activeCode = DEFAULT_CMD_IDX;
-		return;
-	}
-	else if('0' <= _b && _b <= '9') {
-		if(parser.activeCode == DEFAULT_CMD_IDX) {
-			return;
-		}
-		if(!usedCode(parser.valueCode[parser.activeCode])) {
-			parser.valueCode[parser.activeCode] = 0;
-		}
-		parser.valueCode[parser.activeCode] *= 10;
-		parser.valueCode[parser.activeCode] += numIdx(_b);
-	}
-	else if('A' <= _b && _b <= 'Z') {
-		parser.activeCode = alpIdx(_b);
-		if(usedCode(parser.valueCode[parser.activeCode])) {
-			parser.activeCode = DEFAULT_CMD_IDX;
-			return;
-		}
-		if(parser.firstCode == DEFAULT_CMD_IDX) {
-			parser.firstCode = parser.activeCode;
-		}
-	}
-	else if(_b == '\n' || _b == '\r' || _b == '\r\n') {
-		parseCode();
-		if(parser.isBusy) {
-			return;
-		}
-		parser.firstCode = DEFAULT_CMD_IDX;
-		parser.activeCode = DEFAULT_CMD_IDX;
-		for(uint8_t _cmd = _A_; _cmd <= _Z_; _cmd++) {
-			parser.valueCode[_cmd] = DEFAULT_CODE_VALUE;
-		}
-	}
+  if(_b == ' ') {
+    parser.activeCode = DEFAULT_CMD_IDX;
+    return;
+  }
+  else if('0' <= _b && _b <= '9') {
+    if(parser.activeCode == DEFAULT_CMD_IDX) {
+      return;
+    }
+    if(!usedCode(parser.valueCode[parser.activeCode])) {
+      parser.valueCode[parser.activeCode] = 0;
+    }
+    parser.valueCode[parser.activeCode] *= 10;
+    parser.valueCode[parser.activeCode] += numIdx(_b);
+  }
+  else if('A' <= _b && _b <= 'Z') {
+    parser.activeCode = alpIdx(_b);
+    if(usedCode(parser.valueCode[parser.activeCode])) {
+      parser.activeCode = DEFAULT_CMD_IDX;
+      return;
+    }
+    if(parser.firstCode == DEFAULT_CMD_IDX) {
+      parser.firstCode = parser.activeCode;
+    }
+  }
+  else if(_b == '\n' || _b == '\r' || _b == '\r\n') {
+    parseCode();
+    if(parser.isBusy) {
+      return;
+    }
+    parser.firstCode = DEFAULT_CMD_IDX;
+    parser.activeCode = DEFAULT_CMD_IDX;
+    for(uint8_t _cmd = _A_; _cmd <= _Z_; _cmd++) {
+      parser.valueCode[_cmd] = DEFAULT_CODE_VALUE;
+    }
+  }
 }
 
 /**
@@ -113,11 +113,11 @@ void CommandParser::parseByte(char _b) {
  * @return none.
  **/
 void CommandParser::parseCode() {
-	switch(parser.firstCode) {
-		case _S_: parseCodeS(); return;
-		case _Q_: parseCodeQ(); return;
-		case _C_: parseCodeC(); return;
-	}
+  switch(parser.firstCode) {
+    case _S_: parseCodeS(); return;
+    case _Q_: parseCodeQ(); return;
+    case _C_: parseCodeC(); return;
+  }
 }
 
 /**
@@ -127,12 +127,12 @@ void CommandParser::parseCode() {
  * @return none.
  **/
 void CommandParser::parseCodeS() {
-	switch(parser.valueCode[_S_]) {
-		case 0: parseCodeS0(); return;
-		case 1: parseCodeS1(); return;
-		case 2: parseCodeS2(); return;
-		case 3: parseCodeS3(); return;
-	}
+  switch(parser.valueCode[_S_]) {
+    case 0: parseCodeS0(); return;
+    case 1: parseCodeS1(); return;
+    case 2: parseCodeS2(); return;
+    case 3: parseCodeS3(); return;
+  }
 }
 
 /**
@@ -145,15 +145,15 @@ void CommandParser::parseCodeS() {
  * @return none.
  **/
 void CommandParser::parseCodeS0() {
-	if(usedCode(parser.valueCode[_L_])) {
-		BodyMovement::setDefault(HF_L, parser.valueCode[_L_]);
-	}
-	else if(usedCode(parser.valueCode[_R_])) {
-		BodyMovement::setDefault(HF_R, parser.valueCode[_R_]);
-	}
-	else {
-		BodyMovement::setDefault();
-	}
+  if(usedCode(parser.valueCode[_L_])) {
+    BodyMovement::setDefault(HF_L, parser.valueCode[_L_]);
+  }
+  else if(usedCode(parser.valueCode[_R_])) {
+    BodyMovement::setDefault(HF_R, parser.valueCode[_R_]);
+  }
+  else {
+    BodyMovement::setDefault();
+  }
 }
 
 /**
@@ -165,18 +165,18 @@ void CommandParser::parseCodeS0() {
  * @return none.
  **/
 void CommandParser::parseCodeS1() {
-	if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) || 
-	   !usedCode(parser.valueCode[_A_])) {
-		return;
-	}
-	if(usedCode(parser.valueCode[_L_])) {
-		BodyMovement::setPos(HF_L, parser.valueCode[_L_],
-		                           parser.valueCode[_A_]);
-	}
-	else {
-		BodyMovement::setPos(HF_R, parser.valueCode[_R_],
-		                           parser.valueCode[_A_]);
-	}
+  if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) || 
+     !usedCode(parser.valueCode[_A_])) {
+    return;
+  }
+  if(usedCode(parser.valueCode[_L_])) {
+    BodyMovement::setPos(HF_L, parser.valueCode[_L_],
+                               parser.valueCode[_A_]);
+  }
+  else {
+    BodyMovement::setPos(HF_R, parser.valueCode[_R_],
+                               parser.valueCode[_A_]);
+  }
 }
 
 /**
@@ -188,20 +188,20 @@ void CommandParser::parseCodeS1() {
  * @return none.
  **/
 void CommandParser::parseCodeS2() {
-	if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) ||
-	   !usedCode(parser.valueCode[_A_])  || !usedCode(parser.valueCode[_T_])) {
-		return;
-	}
-	if(usedCode(parser.valueCode[_L_])) {
-		BodyMovement::setSweep(HF_L, parser.valueCode[_L_],
-		                             parser.valueCode[_A_],
-													       parser.valueCode[_T_]);
-	}
-	else {
-		BodyMovement::setSweep(HF_R, parser.valueCode[_R_],
-		                             parser.valueCode[_A_],
-													       parser.valueCode[_T_]);
-	}
+  if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) ||
+     !usedCode(parser.valueCode[_A_])  || !usedCode(parser.valueCode[_T_])) {
+    return;
+  }
+  if(usedCode(parser.valueCode[_L_])) {
+    BodyMovement::setSweep(HF_L, parser.valueCode[_L_],
+                                 parser.valueCode[_A_],
+                                 parser.valueCode[_T_]);
+  }
+  else {
+    BodyMovement::setSweep(HF_R, parser.valueCode[_R_],
+                                 parser.valueCode[_A_],
+                                 parser.valueCode[_T_]);
+  }
 }
 
 /**
@@ -213,15 +213,15 @@ void CommandParser::parseCodeS2() {
  * @return none.
  **/
 void CommandParser::parseCodeS3() {
-	if(!usedCode(parser.valueCode[_A_]) ||
-	   !usedCode(parser.valueCode[_D_]) ||
+  if(!usedCode(parser.valueCode[_A_]) ||
+     !usedCode(parser.valueCode[_D_]) ||
      !usedCode(parser.valueCode[_T_])) {
-		AnimationStore::clearAnimation(true);
-		return;
-	}
-	AnimationStore::applyAnimation(parser.valueCode[_A_],
-	                               parser.valueCode[_D_],
-																 parser.valueCode[_T_]);
+    AnimationStore::clearAnimation(true);
+    return;
+  }
+  AnimationStore::applyAnimation(parser.valueCode[_A_],
+                                 parser.valueCode[_D_],
+                                 parser.valueCode[_T_]);
 }
 
 /**
@@ -231,10 +231,10 @@ void CommandParser::parseCodeS3() {
  * @return none.
  **/
 void CommandParser::parseCodeQ() {
-	switch(parser.valueCode[_Q_]) {
-		case 0: parseCodeQ0(); return;
-		case 1: parseCodeQ1(); return;
-	}
+  switch(parser.valueCode[_Q_]) {
+    case 0: parseCodeQ0(); return;
+    case 1: parseCodeQ1(); return;
+  }
 }
 
 /**
@@ -247,32 +247,32 @@ void CommandParser::parseCodeQ() {
  * @return none.
  **/
 void CommandParser::parseCodeQ0() {
-	if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) ||
-	   !usedCode(parser.valueCode[_D_])) {
-		return;
-	}
-	if(!usedCode(parser.valueCode[_A_])) {
-		parser.valueCode[_A_] = 0;
-	}
-	if(usedCode(parser.valueCode[_L_])) {
-		bool _inserted = BodyMovement::pushQueue(HF_L, parser.valueCode[_L_],
-		                                               parser.valueCode[_A_],
-		                                               parser.valueCode[_D_]);
-		if(!_inserted) {
-			parser.isBusy = true;
-			return;
-		}
-	}
-	else {
-		bool _inserted = BodyMovement::pushQueue(HF_R, parser.valueCode[_R_],
-		                                               parser.valueCode[_A_],
-		                                               parser.valueCode[_D_]);
-		if(!_inserted) {
-			parser.isBusy = true;
-			return;
-		}
-	}
-	parser.isBusy = false;
+  if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_])) ||
+     !usedCode(parser.valueCode[_D_])) {
+    return;
+  }
+  if(!usedCode(parser.valueCode[_A_])) {
+    parser.valueCode[_A_] = 0;
+  }
+  if(usedCode(parser.valueCode[_L_])) {
+    bool _inserted = BodyMovement::pushQueue(HF_L, parser.valueCode[_L_],
+                                                   parser.valueCode[_A_],
+                                                   parser.valueCode[_D_]);
+    if(!_inserted) {
+      parser.isBusy = true;
+      return;
+    }
+  }
+  else {
+    bool _inserted = BodyMovement::pushQueue(HF_R, parser.valueCode[_R_],
+                                                   parser.valueCode[_A_],
+                                                   parser.valueCode[_D_]);
+    if(!_inserted) {
+      parser.isBusy = true;
+      return;
+    }
+  }
+  parser.isBusy = false;
 }
 
 /**
@@ -284,11 +284,11 @@ void CommandParser::parseCodeQ0() {
  * @return none.
  **/
 void CommandParser::parseCodeQ1() {
-	if(!usedCode(parser.valueCode[_A_]) ||
-	   !usedCode(parser.valueCode[_D_]) ||
-	   !usedCode(parser.valueCode[_S_])) {
-		return;
-	}
+  if(!usedCode(parser.valueCode[_A_]) ||
+     !usedCode(parser.valueCode[_D_]) ||
+     !usedCode(parser.valueCode[_S_])) {
+    return;
+  }
 }
 
 /**
@@ -298,9 +298,9 @@ void CommandParser::parseCodeQ1() {
  * @return none.
  **/
 void CommandParser::parseCodeC() {
-	switch(parser.valueCode[_C_]) {
-		case 0: parseCodeC0(); return;
-	}
+  switch(parser.valueCode[_C_]) {
+    case 0: parseCodeC0(); return;
+  }
 }
 
 /**
@@ -312,16 +312,16 @@ void CommandParser::parseCodeC() {
  * @return none.
  **/
 void CommandParser::parseCodeC0() {
-	if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_]))
+  if((!usedCode(parser.valueCode[_L_]) && !usedCode(parser.valueCode[_R_]))
      || !usedCode(parser.valueCode[_W_])) {
-		return;
-	}
+    return;
+  }
   uint8_t _ch = 0;
-	if(usedCode(parser.valueCode[_L_])) {
+  if(usedCode(parser.valueCode[_L_])) {
     _ch = HF_NUM + parser.valueCode[_L_];
-	}
-	else {
+  }
+  else {
     _ch = parser.valueCode[_R_];
-	}
+  }
   SerialServo::writeWidth(_ch, parser.valueCode[_W_], false, true);
 }

@@ -61,7 +61,7 @@ steps_info_t
  * @return none.
  **/
 void AnimationStore::begin() {
-	clearAnimation(true);
+  clearAnimation(true);
 }
 /**
  *
@@ -71,16 +71,16 @@ void AnimationStore::begin() {
  **/
 void AnimationStore::applyAnimation(uint8_t _anim, uint16_t _dist,
                                     uint16_t _time, uint16_t _angle) {
-	BodyMovement::setSequence(true);
-	anim.activeAnimation = _anim;
-	anim.stepAnimation = 0;
-	anim.timeAnimation = _time;
-	anim.distAnimation = _dist;
-	anim.angleAnimation = _angle;
+  BodyMovement::setSequence(true);
+  anim.activeAnimation = _anim;
+  anim.stepAnimation = 0;
+  anim.timeAnimation = _time;
+  anim.distAnimation = _dist;
+  anim.angleAnimation = _angle;
 
-	anim.startAnimation = pgm_read_word_near(&(steps_size[_anim][ANIM_STEPS_START]));
-	anim.loopAnimation = pgm_read_word_near(&(steps_size[_anim][ANIM_STEPS_LOOP]));
-	anim.endAnimation = pgm_read_word_near(&(steps_size[_anim][ANIM_STEPS_END]));
+  anim.startAnimation = pgm_read_word_near(&(steps_size[_anim][ANIM_STEPS_START]));
+  anim.loopAnimation = pgm_read_word_near(&(steps_size[_anim][ANIM_STEPS_LOOP]));
+  anim.endAnimation = pgm_read_word_near(&(steps_size[_anim][ANIM_STEPS_END]));
 }
 
 /**
@@ -90,15 +90,15 @@ void AnimationStore::applyAnimation(uint8_t _anim, uint16_t _dist,
  * @return none.
  **/
 void AnimationStore::clearAnimation(bool _force) {
-	if(_force) {
+  if(_force) {
     BodyMovement::setSequence(false);
-		anim.activeAnimation = ANIM_NULL;
+    anim.activeAnimation = ANIM_NULL;
     anim.endingAnimation = false;
-		anim.stepAnimation = 0;
+    anim.stepAnimation = 0;
     anim.timeAnimation = 0;
     anim.distAnimation = 0;
     anim.angleAnimation = 0;
-	}
+  }
   else {
     anim.endingAnimation = true;
   }
@@ -111,21 +111,21 @@ void AnimationStore::clearAnimation(bool _force) {
  * @return none.
  **/
 void AnimationStore::executeAnimation() {
-	static bool _half;
-	static uint8_t _idx;
-	static uint16_t _angle, _time;
-	if(anim.activeAnimation == ANIM_NULL) {
-		return;
-	}
-	if(!anim.busyAnimation) {
-		nextStep(_half, _idx, _angle, _time);
-	}
-	bool _inserted = BodyMovement::pushQueue(_half, _idx, _angle, _time);
-	if(!_inserted) {
-		anim.busyAnimation = true;
-		return;
-	}
-	anim.busyAnimation = false;
+  static bool _half;
+  static uint8_t _idx;
+  static uint16_t _angle, _time;
+  if(anim.activeAnimation == ANIM_NULL) {
+    return;
+  }
+  if(!anim.busyAnimation) {
+    nextStep(_half, _idx, _angle, _time);
+  }
+  bool _inserted = BodyMovement::pushQueue(_half, _idx, _angle, _time);
+  if(!_inserted) {
+    anim.busyAnimation = true;
+    return;
+  }
+  anim.busyAnimation = false;
 }
 
 /**
@@ -146,8 +146,8 @@ void AnimationStore::nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle,
     return clearAnimation(true);
   }
 
-	switch(anim.activeAnimation) {
-		case ANIM_FWW: nextStepFWW(_half, _idx, _angle, _time); break;
+  switch(anim.activeAnimation) {
+    case ANIM_FWW: nextStepFWW(_half, _idx, _angle, _time); break;
     case ANIM_BWW: nextStepBWW(_half, _idx, _angle, _time); break;
     case ANIM_SWR: nextStepSWR(_half, _idx, _angle, _time); break;
     case ANIM_SWL: nextStepSWL(_half, _idx, _angle, _time); break;
@@ -158,7 +158,7 @@ void AnimationStore::nextStep(bool &_half, uint8_t &_idx, uint16_t &_angle,
     case ANIM_SIT: nextStepSIT(_half, _idx, _angle, _time); break;
     case ANIM_HR: nextStepHR(_half, _idx, _angle, _time); break;
     case ANIM_FOR: nextStepFOR(_half, _idx, _angle, _time); break;
-	}
+  }
   anim.stepAnimation++;
 }
 
