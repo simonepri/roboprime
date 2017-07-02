@@ -29,8 +29,8 @@
 #include <fstream>
 #include <string>
 #include <queue>
-#include "pugixml.hpp"
-#include "pugixml.cpp"
+#include "lib/pugixml.hpp"
+#include "lib/pugixml.cpp"
 
 bool used[20] = {false};
 
