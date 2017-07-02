@@ -1,0 +1,63 @@
+AutoECO Report
+FILE-A: C:\USERS\SIMONE\DESKTOP\ROBOTSCHEME\ROBOT.MAX
+FILE-B: C:\USERS\SIMONE\DESKTOP\ROBOTSCHEME\ROBOT.MNL
+If "*EOF*" immediately follows, no changes were made
+Adding footprint SIP/TM/L.300/3
+Adding footprint DIP.100/16/W.300/L.800
+Adding footprint SIP/TM/L.800/8
+Adding package HEADER_3
+Adding package 74HC4017
+Adding package HEADER_8
+Adding component H3
+Adding component H2
+Adding component H6
+Adding component H14
+Adding component H8
+Adding component H7
+Adding component U1
+Adding component H19
+Adding component H11
+Adding component H0
+Adding component H5
+Adding component H13
+Adding component H16
+Adding component H12
+Adding component U0
+Adding component H18
+Adding component H17
+Adding component H9
+Adding component H10
+Adding component J9
+Adding component H4
+Adding component H1
+Adding component H15
+Adding net VCC
+Adding net P9
+Adding net P11
+Adding net P10
+Adding net P12
+Adding net R1
+Adding net R2
+Adding net R3
+Adding net R4
+Adding net R5
+Adding net R6
+Adding net R7
+Adding net R8
+Adding net R9
+Adding net L0
+Adding net L1
+Adding net L2
+Adding net L3
+Adding net L4
+Adding net L5
+Adding net L6
+Adding net L7
+Adding net L8
+Adding net L9
+Adding net R0
+Adding net GND
+Adding net V6
+Deleting net DEFAULT
+*EOF*
+No errors found

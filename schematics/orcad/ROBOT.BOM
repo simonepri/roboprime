@@ -1,0 +1,19 @@
+RoboPrime  Revised: Sunday, December 13, 2015
+Simone Primarosa          Revision: 1
+
+
+
+
+
+
+
+Bill Of Materials       December 13,2015      19:57:17	Page1
+
+Item	Quantity	Reference	Part
+______________________________________________
+
+1	20	H1,H2,H3,H4,H5,H6,H7,H8,	HEADER3
+		H9,H10,H11,H12,H13,H14,
+		H15,H16,H17,H18,H19,H0
+2	1	J9	HEADER8
+3	2	U0,U1	74HC4017
