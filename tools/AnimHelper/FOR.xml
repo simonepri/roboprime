@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<start>
+	<mov half="R" idx="6" angle="1500" start="0" duration="1000"/>
+	<mov half="R" idx="7" angle="100" start="0" duration="1000"/>
+	<mov half="R" idx="8" angle="600" start="0" duration="1000"/>
+	<mov half="R" idx="9" angle="600" start="0" duration="1000"/>
+	<mov half="L" idx="6" angle="1500" start="0" duration="1000"/>
+	<mov half="L" idx="7" angle="0" start="0" duration="1000"/>
+	<mov half="L" idx="8" angle="0" start="0" duration="1000"/>
+	<mov half="L" idx="9" angle="400" start="0" duration="1000"/>
+  
+</start>
+
+<loop>
+	<mov half="R" idx="6" angle="1800" start="1000" duration="500"/>
+	<mov half="R" idx="9" angle="400" start="1250" duration="250"/>
+	<mov half="L" idx="8" angle="500" start="1250" duration="250"/>
+	<mov half="R" idx="9" angle="600" start="1500" duration="500"/>
+	<mov half="L" idx="8" angle="0" start="1500" duration="500"/>
+	<mov half="R" idx="6" angle="1500" start="1500" duration="500"/>
+</loop>
+
+<end>
+</end>

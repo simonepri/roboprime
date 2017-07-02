@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<start>
+	<mov half="R" idx="0" angle="950" start="0" duration="1000"/>
+	<mov half="L" idx="0" angle="950" start="0" duration="1000"/>
+	<mov half="R" idx="1" angle="1800" start="0" duration="1000"/>
+	<mov half="L" idx="1" angle="1800" start="0" duration="1000"/>
+	<mov half="R" idx="2" angle="0" start="0" duration="1000"/>
+	<mov half="L" idx="2" angle="0" start="0" duration="1000"/>
+	<mov half="R" idx="3" angle="500" start="0" duration="1000"/>
+	<mov half="L" idx="3" angle="500" start="0" duration="1000"/>
+  
+	<mov half="R" idx="6" angle="500" start="1000" duration="1000"/>
+	<mov half="L" idx="6" angle="500" start="1000" duration="1000"/>
+	<mov half="R" idx="8" angle="500" start="1000" duration="1000"/>
+	<mov half="L" idx="8" angle="500" start="1000" duration="1000"/>
+	<mov half="R" idx="9" angle="1500" start="1000" duration="1000"/>
+	<mov half="L" idx="9" angle="1500" start="1000" duration="1000"/>
+  
+	<mov half="R" idx="3" angle="1000" start="2000" duration="1000"/>
+	<mov half="L" idx="3" angle="1000" start="2000" duration="1000"/>
+	<mov half="R" idx="6" angle="0" start="2000" duration="1000"/>
+	<mov half="L" idx="6" angle="0" start="2000" duration="1000"/>
+	<mov half="R" idx="3" angle="100" start="3000" duration="1000"/>
+	<mov half="L" idx="3" angle="0" start="3000" duration="1000"/>
+	<mov half="R" idx="2" angle="1400" start="3000" duration="1000"/>
+	<mov half="L" idx="2" angle="1400" start="3000" duration="1000"/>
+	<mov half="R" idx="1" angle="1200" start="3000" duration="1000"/>
+	<mov half="L" idx="1" angle="1200" start="3000" duration="1000"/>
+	<mov half="R" idx="9" angle="1200" start="3000" duration="1000"/>
+	<mov half="L" idx="9" angle="1200" start="3000" duration="1000"/>
+	<mov half="R" idx="6" angle="900" start="4000" duration="1000"/>
+	<mov half="L" idx="6" angle="900" start="4000" duration="1000"/>
+  
+</start>
+
+<loop>
+</loop>
+
+<end>
+</end>

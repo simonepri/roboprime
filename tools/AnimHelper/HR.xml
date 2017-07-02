@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<start>
+	<mov half="R" idx="6" angle="1600" start="0" duration="1000"/>
+	<mov half="R" idx="7" angle="400" start="0" duration="1000"/>
+	<mov half="R" idx="9" angle="400" start="0" duration="1000"/>
+	<mov half="R" idx="8" angle="900" start="0" duration="1000"/>
+  
+</start>
+
+<loop>
+	<mov half="R" idx="8" angle="500" start="1000" duration="1000"/>
+	<mov half="R" idx="8" angle="1300" start="2000" duration="1000"/>
+</loop>
+
+<end>
+</end>
