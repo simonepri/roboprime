@@ -72,12 +72,14 @@ std::string idx_name(int idx) {
 		case 8: return std::string("PART_ELBOW_Z_ROT");
 		case 9: return std::string("PART_ELBOW_X_ROT");
 	}
+	return "";
 }
 std::string hf_name(int hf) {
 	switch(hf) {
 		case 0: return std::string("HF_R");
 		case 1: return std::string("HF_L");
 	}
+	return "";
 }
 
 
