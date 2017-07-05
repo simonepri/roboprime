@@ -74,7 +74,7 @@ S1 | `S1 Ri Ad` or `S1 Li Ad` | **i** = index[0-9], **d** = angle[0-1800]
 S2 | `S1 Ri Ad Tm` or `S1 Li Ad Tm` | **i** = index[0-9], **d** = angle[0-1800], **m** = duration[ms]
 S3 | `S3 An Ds Tm` | **n** = anim idx[0-10], **s** = space[cm], **m** = duration[ms]
 Q0 | `Q0 Ri Ad` or `S1 Li Ad` | **i** = index[0-9], **d** = angle[0-1800]
-C0 | `Ri Wp` or `Li Wp` | **i** = index[0-9], **w** = pulse witdh[us]
+C0 | `Ri Wp` or `Li Wp` | **i** = index[0-9], **p** = pulse witdh[us]
 
 Name | Description
 ---|---
