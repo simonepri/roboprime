@@ -58,7 +58,7 @@ Amount | 3D Model | Amount | 3D Model
 > SX_* models needs to be mirrored on the correct axis before the printing process.
 
 ### Wiring
-Coming soon.
+![image](https://user-images.githubusercontent.com/3505087/27872822-56d50d54-61aa-11e7-9c37-f4fec5446ede.png)
 
 ### Firmware size
 ![Firmware size](https://user-images.githubusercontent.com/3505087/27862900-dbcd7a6e-6187-11e7-95c3-12126a2519e5.png)
