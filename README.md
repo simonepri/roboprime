@@ -14,7 +14,7 @@ Description coming soon.
 
 ### Bill of Materials
 Amount | Hardware
------|-------
+---|---
 1 | Arduino Pro Micro (Atmega328p)
 1 | HC-05 (Bluetooth)
 2 | 74HC4017 (5-stage Johnson decade counter)
@@ -23,13 +23,13 @@ Amount | Hardware
 1 | Ad-hoc board (See wiring section)
 
 Amount | Screw
------|-------
+---|---
 37 | M2 x 4mm
 32 | M2 x 14mm
 19 | M2 x 20mm
 
 Amount | 3D Model | Amount | 3D Model
------|-------|-------|-------
+---|---|---|---
 38 | [SP_Cover_1_foro](3D/stl/1xSP_Cover_1_foro.stl) |  | 
 1 | [MID_Scapole](3D/stl/1xMID_Scapole.stl) |  | 
 2 | [MID_Torace](3D/stl/1xMID_Torace.stl) |  | 
@@ -65,6 +65,26 @@ Coming soon.
 Coming soon.
 
 ## Commands
+The firmware allow you to fully control the robot through bluetooth, in order to make complex things.
+Those are the command implemented that can be sended through the serial protocoll.
+
+Name | Syntax | Parameters
+---|---|---
+S0 | `S0 Ri` or `S0 Li` | **i** = index[0-9] (optional)
+S1 | `S1 Ri Ad` or `S1 Li Ad` | **i** = index[0-9], **d** = angle[0-1800]
+S2 | `S1 Ri Ad Tm` or `S1 Li Ad Tm` | **i** = index[0-9], **d** = angle[0-1800], **m** = duration[ms]
+S3 | `S3 An Ds Tm` | **n** = anim idx[0-10], **s** = space[cm], **m** = duration[ms]
+Q0 | `Q0 Ri Ad` or `S1 Li Ad` | **i** = index[0-9], **d** = angle[0-1800]
+C0 | `Ri Wp` or `Li Wp` | **i** = index[0-9], **w** = pulse witdh[us]
+
+Name | Description
+---|---
+S0 | Move a servo to its default position. If no index is passed all servos will be resetted.
+S1 | Move a servo to a specific angle. 0 is 0° and 1800 is 180°.
+S2 | Move a servo to a specific angle gradually by sweeping it for a specific amount of time.
+S3 | Apply a specific animation. Space and Duration are not used at the moment but are supposed to be used as parameters for certains animations.
+Q0 | Same as `S1` but the movment is added to the movement queue. If the angle 0 a pause will be planned instead. (A pause will make the next command, on the same motor index, hang until the pause is not ended) This is used in order to plan complex syncronized movements. (E.g. Animations)
+C0 | Sets a specific pulse width to a specific motor for calibration purposes.
 
 
 ## Animations
@@ -137,8 +157,9 @@ The firmware contains some basic animations hardcoded inside it.
   <img src="gallery/fuckoff-animation.gif" alt="Humanoid Hello Animation">
 </details>
 
-## Wiki
-Coming soon
+## Project Walkthrough
+Currently only written in Italian 🇮🇹 
+Link coming soon.
 
 ## Authors
 * **Simone Primarosa** - [simonepri](https://github.com/simonepri)
