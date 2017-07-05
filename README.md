@@ -60,13 +60,12 @@ Amount | 3D Model | Amount | 3D Model
 ### Wiring
 Coming soon.
 
-### Flashing
+### Firmware size
 ![Firmware size](https://user-images.githubusercontent.com/3505087/27862900-dbcd7a6e-6187-11e7-95c3-12126a2519e5.png)
-Coming soon.
 
 ## Commands
-The firmware allow you to fully control the robot through bluetooth, in order to make complex things.
-Those are the command implemented that can be sended through the serial protocoll.
+The firmware allows you to fully control the robot through bluetooth in order to make complex things.
+Those are the commands implemented that can be sended through the serial protocol.
 
 Name | Syntax | Parameters
 ---|---|---
@@ -80,10 +79,10 @@ C0 | `Ri Wp` or `Li Wp` | **i** = index[0-9], **w** = pulse witdh[us]
 Name | Description
 ---|---
 S0 | Move a servo to its default position. If no index is passed all servos will be resetted.
-S1 | Move a servo to a specific angle. 0 is 0° and 1800 is 180°.
+S1 | Move a servo to a specific angle. The value 0 corresponds to 0° and the value 1800 corresponds to 180°.
 S2 | Move a servo to a specific angle gradually by sweeping it for a specific amount of time.
 S3 | Apply a specific animation. Space and Duration are not used at the moment but are supposed to be used as parameters for certains animations.
-Q0 | Same as `S1` but the movment is added to the movement queue. If the angle 0 a pause will be planned instead. (A pause will make the next command, on the same motor index, hang until the pause is not ended) This is used in order to plan complex syncronized movements. (E.g. Animations)
+Q0 | Same as `S1` but the movement is added to the movements queue. If the angle value is 0 a pause will be planned instead. (A pause will make the next planned movement, on the same motor index, hang until the pause is not ended) This is used in order to plan complex syncronized movements. (E.g. Animations)
 C0 | Sets a specific pulse width to a specific motor for calibration purposes.
 
 
@@ -157,9 +156,12 @@ The firmware contains some basic animations hardcoded inside it.
   <img src="gallery/fuckoff-animation.gif" alt="Humanoid Hello Animation">
 </details>
 
-## Project Walkthrough
-Currently only written in Italian 🇮🇹 
-Link coming soon.
+## Project Analysis
+This document was written for my high-school exam in order to give to the professors some basic knowledge to make them understand how the project works.
+
+Unfortunately it's written in Italian 🇮🇹
+
+[The document is available here](https://goo.gl/fZM7Dc)
 
 ## Authors
 * **Simone Primarosa** - [simonepri](https://github.com/simonepri)
