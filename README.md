@@ -5,13 +5,14 @@
 </p>
 Description coming soon.
 
-# Press
 <p>
   <a href="http://explore.makerfairerome.eu/poi/Exhibit_1447"><img src="https://user-images.githubusercontent.com/3505087/27860797-617e0b1a-617e-11e7-9bb1-460a81c064e9.png" alt="Maker Faire" width="128"></a>
   <a href="http://www.ilmessaggero.it/pay/edicola/maker_faire_roma_14_ottobre-2001501.html"> <img src="https://user-images.githubusercontent.com/3505087/27860876-c14fec8e-617e-11e7-8f0e-690555bec853.png" alt="Il Messagero" width="200"></a>
 </p>
 
-## Bill of Materials
+## Getting Started
+
+### Bill of Materials
 Amount | Hardware
 -----|-------
 1 | Arduino Pro Micro (Atmega328p)
@@ -56,8 +57,15 @@ Amount | 3D Model | Amount | 3D Model
 
 > SX_* models needs to be mirrored on the correct axis before the printing process.
 
-## Wiring
+### Wiring
 Coming soon.
+
+### Flashing
+![Firmware size](https://user-images.githubusercontent.com/3505087/27862900-dbcd7a6e-6187-11e7-95c3-12126a2519e5.png)
+Coming soon.
+
+## Commands
+
 
 ## Animations
 The firmware contains some basic animations hardcoded inside it.
@@ -133,7 +141,9 @@ The firmware contains some basic animations hardcoded inside it.
 Coming soon
 
 ## Authors
-Coming soon
+* **Simone Primarosa** - [simonepri](https://github.com/simonepri)
+
+See also the list of [contributors](https://github.com/simonepri/roboprime/contributors) who participated in this project.
 
 ## License
-Coming soon
+This project is licensed under the GPL-3.0 License - see the [LICENSE.md](LICENSE.md) file for details.
