@@ -87,9 +87,7 @@ C0 | Sets a specific pulse width to a specific motor for calibration purposes.
 
 
 ## Animations
-The firmware contains some basic animations hardcoded inside it.
-> Click on the arrow to see an example of the animation!
-
+The firmware contains some basic animations hardcoded inside it:
 <details> 
   <summary><b>Forward walk</b> - <i>work-in-progress</i></summary>
   <br/>
@@ -155,6 +153,9 @@ The firmware contains some basic animations hardcoded inside it.
   <br/>
   <img src="gallery/fuckoff-animation.gif" alt="Humanoid Hello Animation">
 </details>
+<br/>
+
+> Click on the arrow to see an example of the animation!
 
 ## Project Analysis
 This document was written for my high-school exam in order to give to the professors some basic knowledge to make them understand how the project works.
