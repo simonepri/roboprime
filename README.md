@@ -35,7 +35,6 @@ Some images done during the development process:
 > Click on the image to enlarge.
 
 ## Getting Started
-Description coming soon.
 
 ### Hardware
 The total cost is about $60-$100. Depending on where you buy the pieces.
@@ -136,6 +135,22 @@ Q0 | `Q0 Ri Ad`<br>or<br>`Q0 Ri Ad` | **i** = index[0-9]<br>**d** = angle[0-1800
 C0 | `Ri Wp`<br>or<br>`Li Wp` | **i** = index[0-9]<br>**p** = pulse width[us] | Sets a specific pulse width to a specific <br>motor for calibration purposes.
 
 ## Animations
+
+The firmware contains some basic animations hardcoded inside it:
+
+Id | Name | Status
+---|------|-------
+0  | Forward walk.                         | WIP
+1  | Backward walk.                        | NO
+2  | Side walk to right.                   | NO
+3  | Side walk to left.                    | NO
+4  | Clockwise standstill rotation.        | NO
+5  | Counterclockwise standstill rotation. | NO
+6  | Clockwise curved walk.                | NO
+7  | Counterclockwise curved walk.         | NO
+8  | Sit down.                             | DONE
+9  | Hello.                                | DONE
+10 | Fuck off.                             | DONE
 
 ## Project Analysis
 This document was written for my high-school exam in order to give to the professors some basic knowledge to make them understand how the project works.
