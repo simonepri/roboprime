@@ -1,4 +1,4 @@
-# Roboprime 🤖
+# Roboprime 🤖 [![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/simonepri/roboprime/)
 > Full featured 21 DOF 3D Printed Humanoid Robot based on ATmega328P chip
 <p align="center">
   <img src="gallery/hello-world.gif" alt="Roboprime Hello">
