@@ -15,20 +15,22 @@ The project has been featured here:
 ### Gallery
 Some images done during the development process:
 
-<img src="" alt="" height="0" width="0"> <img src="gallery/roboprime-v2.jpg" alt="Roboprime" height="128">
-<img src="gallery/roboprime-v2-front.jpg" alt="Roboprime" height="128">
-<img src="gallery/roboprime-v2-leg.jpg" alt="Roboprime" height="128">
-<img src="gallery/roboprime-v2-assembling.jpg" alt="Roboprime" height="128">
-<img src="gallery/roboprime-v2-printing.jpg" alt="Roboprime" height="128">
-<img src="gallery/roboprime-v1-front.jpg" alt="Roboprime" height="128">
-<img src="gallery/roboprime-v1-weigth.jpg" alt="Roboprime" height="128">
-<img src="gallery/roboprime-v1-top.jpg" alt="Roboprime" height="128">
-<img src="gallery/board-back.jpg" alt="Roboprime" height="128">
-<img src="gallery/board-front.jpg" alt="Roboprime" height="128">
-<img src="gallery/hello-animation.gif" alt="Roboprime" height="128">
-<img src="gallery/fuckoff-animation.gif" alt="Roboprime" height="128">
-<img src="gallery/sitdown-animation.gif" alt="Roboprime" height="128">
-<img src="gallery/walk-animation.gif" alt="Roboprime" height="128">
+<p>
+  <img src="gallery/roboprime-v2.jpg" alt="Roboprime" height="128">
+  <img src="gallery/roboprime-v2-front.jpg" alt="Roboprime" height="128">
+  <img src="gallery/roboprime-v2-leg.jpg" alt="Roboprime" height="128">
+  <img src="gallery/roboprime-v2-assembling.jpg" alt="Roboprime" height="128">
+  <img src="gallery/roboprime-v2-printing.jpg" alt="Roboprime" height="128">
+  <img src="gallery/roboprime-v1-front.jpg" alt="Roboprime" height="128">
+  <img src="gallery/roboprime-v1-weigth.jpg" alt="Roboprime" height="128">
+  <img src="gallery/roboprime-v1-top.jpg" alt="Roboprime" height="128">
+  <img src="gallery/board-back.jpg" alt="Roboprime" height="128">
+  <img src="gallery/board-front.jpg" alt="Roboprime" height="128">
+  <img src="gallery/hello-animation.gif" alt="Roboprime" height="128">
+  <img src="gallery/fuckoff-animation.gif" alt="Roboprime" height="128">
+  <img src="gallery/sitdown-animation.gif" alt="Roboprime" height="128">
+  <img src="gallery/walk-animation.gif" alt="Roboprime" height="128">
+</p>
 
 > Click on the image to enlarge.
 
