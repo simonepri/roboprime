@@ -52,32 +52,51 @@ Amount | Screw
 32 | M2 x 14mm
 19 | M2 x 20mm
 
-Amount | 3D Model | Amount | 3D Model
----|---|---|---
-38 | [SP_Cover_1_foro](3D/stl/1xSP_Cover_1_foro.stl) |  | 
-1 | [MID_Scapole](3D/stl/1xMID_Scapole.stl) |  | 
-2 | [MID_Torace](3D/stl/1xMID_Torace.stl) |  | 
-1 | [MID_Anca_TOP](3D/stl/1xMID_Anca_TOP.stl) |  | 
-2 | [MID_Anca_BTM](3D/stl/1xMID_Anca_BTM.stl) |  | 
-1 | [DX_Spalla_A](3D/stl/1xDX_Spalla_A.stl) | 1 | [SX_Spalla_A](3D/stl/1xDX_Spalla_A.stl)
-1 | [DX_Spalla_B](3D/stl/1xDX_Spalla_B.stl) | 1 | [SX_Spalla_B](3D/stl/1xDX_Spalla_B.stl)
-1 | [DX_Avambraccio_A](3D/stl/1xDX_Avambraccio_A.stl) | 1 | [SX_Avambraccio_A](3D/stl/1xDX_Avambraccio_A.stl)
-1 | [DX_Avambraccio_B](3D/stl/1xDX_Avambraccio_B.stl) | 1 | [SX_Avambraccio_B](3D/stl/1xDX_Avambraccio_B.stl)
-1 | [DX_Gomito_A](3D/stl/1xDX_Gomito_A.stl) | 1 | [SX_Gomito_A](3D/stl/1xDX_Gomito_A.stl)
-1 | [DX_Gomito_B](3D/stl/1xDX_Gomito_B.stl) | 1 | [SX_Gomito_B](3D/stl/1xDX_Gomito_B.stl)
-1 | [DX_Braccio](3D/stl/1xDX_Braccio.stl) | 1 | [SX_Braccio](3D/stl/1xDX_Braccio.stl)
-1 | [DX_Anca_A](3D/stl/1xDX_Anca_A.stl) | 1 | [SX_Anca_A](3D/stl/1xDX_Anca_A.stl)
-1 | [DX_Anca_B](3D/stl/1xDX_Anca_B.stl) | 1 | [SX_Anca_B](3D/stl/1xDX_Anca_B.stl)
-1 | [DX_Inguine_A](3D/stl/1xDX_Inguine_A.stl) | 1 | [SX_Inguine_A](3D/stl/1xDX_Inguine_A.stl)
-1 | [DX_Inguine_B](3D/stl/1xDX_Inguine_B.stl) | 1 | [SX_Inguine_B](3D/stl/1xDX_Inguine_B.stl)
-1 | [DX_Ginocchio_A](3D/stl/1xDX_Ginocchio_A.stl) | 1 | [SX_Ginocchio_A](3D/stl/1xDX_Ginocchio_A.stl)
-1 | [DX_Ginocchio_B](3D/stl/1xDX_Ginocchio_B.stl) | 1 | [SX_Ginocchio_B](3D/stl/1xDX_Ginocchio_B.stl)
-1 | [DX_Gamba_A](3D/stl/1xDX_Gamba_A.stl) | 1 | [SX_Gamba_A](3D/stl/1xDX_Gamba_A.stl)
-1 | [DX_Gamba_B](3D/stl/1xDX_Gamba_B.stl) | 1 | [SX_Gamba_B](3D/stl/1xDX_Gamba_B.stl)
-1 | [DX_Caviglia_A](3D/stl/1xDX_Caviglia_A.stl) | 1 | [SX_Caviglia_A](3D/stl/1xDX_Caviglia_A.stl)
-1 | [DX_Caviglia_B](3D/stl/1xDX_Caviglia_B.stl) | 1 | [SX_Caviglia_B](3D/stl/1xDX_Caviglia_B.stl)
-1 | [DX_Piede_A](3D/stl/1xDX_Piede_A.stl) | 1 | [SX_Piede_A](3D/stl/1xDX_Piede_A.stl)
-1 | [DX_Piede_B](3D/stl/1xDX_Piede_B.stl) | 1 | [SX_Piede_B](3D/stl/1xDX_Piede_B.stl)
+Part | Amount | Download
+-----|--------|---------
+![SP_Cover_1_foro](3D/stl/thumb/1xSP_Cover_1_foro.png) | 38 | [SP_Cover_1_foro](3D/stl/1xSP_Cover_1_foro.stl)
+![MID_Scapole](3D/stl/thumb/1xMID_Scapole.png) | 1 | [MID_Scapole](3D/stl/1xMID_Scapole.stl)
+![MID_Torace](3D/stl/thumb/1xMID_Torace.png) | 2 | [MID_Torace](3D/stl/1xMID_Torace.stl)
+![MID_Anca_TOP](3D/stl/thumb/1xMID_Anca_TOP.png) | 1 | [MID_Anca_TOP](3D/stl/1xMID_Anca_TOP.stl)
+![MID_Anca_BTM](3D/stl/thumb/1xMID_Anca_BTM.png) | 2 | [MID_Anca_BTM](3D/stl/1xMID_Anca_BTM.stl)
+![DX_Spalla_A](3D/stl/thumb/1xDX_Spalla_A.png) | 1 | [DX_Spalla_A](3D/stl/1xDX_Spalla_A.stl)
+![DX_Spalla_B](3D/stl/thumb/1xDX_Spalla_B.png) | 1 | [DX_Spalla_B](3D/stl/1xDX_Spalla_B.stl)
+![DX_Avambraccio_A](3D/stl/thumb/1xDX_Avambraccio_A.png) | 1 | [DX_Avambraccio_A](3D/stl/1xDX_Avambraccio_A.stl)
+![DX_Avambraccio_B](3D/stl/thumb/1xDX_Avambraccio_B.png) | 1 | [DX_Avambraccio_B](3D/stl/1xDX_Avambraccio_B.stl)
+![DX_Gomito_A](3D/stl/thumb/1xDX_Gomito_A..png) | 1 | [DX_Gomito_A](3D/stl/1xDX_Gomito_A.stl)
+![DX_Gomito_B](3D/stl/thumb/1xDX_Gomito_B.png) | 1 | [DX_Gomito_B](3D/stl/1xDX_Gomito_B.stl)
+![DX_Braccio](3D/stl/thumb/1xDX_Braccio.png) | 1 | [DX_Braccio](3D/stl/1xDX_Braccio.stl)
+![DX_Anca_A](3D/stl/thumb/1xDX_Anca_A.png) | 1 | [DX_Anca_A](3D/stl/1xDX_Anca_A.stl)
+![DX_Anca_B](3D/stl/thumb/1xDX_Anca_B.png) | 1 | [DX_Anca_B](3D/stl/1xDX_Anca_B.stl)
+![DX_Inguine_A](3D/stl/thumb/1xDX_Inguine_A.png) | 1 | [DX_Inguine_A](3D/stl/1xDX_Inguine_A.stl)
+![DX_Inguine_B](3D/stl/thumb/1xDX_Inguine_B.png) | 1 | [DX_Inguine_B](3D/stl/1xDX_Inguine_B.stl)
+![DX_Ginocchio_A](3D/stl/thumb/1xDX_Ginocchio_A.png) | 1 | [DX_Ginocchio_A](3D/stl/1xDX_Ginocchio_A.stl)
+![DX_Ginocchio_B](3D/stl/thumb/1xDX_Ginocchio_B.png) | 1 | [DX_Ginocchio_B](3D/stl/1xDX_Ginocchio_B.stl)
+![DX_Gamba_A](3D/stl/thumb/1xDX_Gamba_A.png) | 1 | [DX_Gamba_A](3D/stl/1xDX_Gamba_A.stl)
+![DX_Gamba_B](3D/stl/thumb/1xDX_Gamba_B.png) | 1 | [DX_Gamba_B](3D/stl/1xDX_Gamba_B.stl)
+![DX_Caviglia_A](3D/stl/thumb/1xDX_Caviglia_A.png) | 1 | [DX_Caviglia_A](3D/stl/1xDX_Caviglia_A.stl)
+![DX_Caviglia_B](3D/stl/thumb/1xDX_Caviglia_B.png) | 1 | [DX_Caviglia_B](3D/stl/1xDX_Caviglia_B.stl)
+![DX_Piede_A](3D/stl/thumb/1xDX_Piede_A.png) | 1 | [DX_Piede_A](3D/stl/1xDX_Piede_A.stl)
+![DX_Piede_B](3D/stl/thumb/1xDX_Piede_B.png) | 1 | [DX_Piede_B](3D/stl/1xDX_Piede_B.stl)
+![SX_Spalla_A](3D/stl/thumb/1xDX_Spalla_A.png) | 1 | [SX_Spalla_A](3D/stl/1xDX_Spalla_A.stl)
+![SX_Spalla_B](3D/stl/thumb/1xDX_Spalla_B.png) | 1 | [SX_Spalla_B](3D/stl/1xDX_Spalla_B.stl)
+![SX_Avambraccio_A](3D/stl/thumb/1xDX_Avambraccio_A.png) | 1 | [SX_Avambraccio_A](3D/stl/1xDX_Avambraccio_A.stl)
+![SX_Avambraccio_B](3D/stl/thumb/1xDX_Avambraccio_B.png) | 1 | [SX_Avambraccio_B](3D/stl/1xDX_Avambraccio_B.stl)
+![SX_Gomito_A](3D/stl/thumb/1xDX_Gomito_A.png) | 1 | [SX_Gomito_A](3D/stl/1xDX_Gomito_A.stl)
+![SX_Gomito_B](3D/stl/thumb/1xDX_Gomito_B.png) | 1 | [SX_Gomito_B](3D/stl/1xDX_Gomito_B.stl)
+![SX_Braccio](3D/stl/thumb/1xDX_Braccio.png) | 1 | [SX_Braccio](3D/stl/1xDX_Braccio.stl)
+![SX_Anca_A](3D/stl/thumb/1xDX_Anca_A.png) | 1 | [SX_Anca_A](3D/stl/1xDX_Anca_A.stl)
+![SX_Anca_B](3D/stl/thumb/1xDX_Anca_B.png) | 1 | [SX_Anca_B](3D/stl/1xDX_Anca_B.stl)
+![SX_Inguine_A](3D/stl/thumb/1xDX_Inguine_A.png) | 1 | [SX_Inguine_A](3D/stl/1xDX_Inguine_A.stl)
+![SX_Inguine_B](3D/stl/thumb/1xDX_Inguine_B.png) | 1 | [SX_Inguine_B](3D/stl/1xDX_Inguine_B.stl)
+![SX_Ginocchio_A](3D/stl/thumb/1xDX_Ginocchio_A.png) | 1 | [SX_Ginocchio_A](3D/stl/1xDX_Ginocchio_A.stl)
+![SX_Ginocchio_B](3D/stl/thumb/1xDX_Ginocchio_B.png) | 1 | [SX_Ginocchio_B](3D/stl/1xDX_Ginocchio_B.stl)
+![SX_Gamba_A](3D/stl/thumb/1xDX_Gamba_A.png) | 1 | [SX_Gamba_A](3D/stl/1xDX_Gamba_A.stl)
+![SX_Gamba_B](3D/stl/thumb/1xDX_Gamba_B.png) | 1 | [SX_Gamba_B](3D/stl/1xDX_Gamba_B.stl)
+![SX_Caviglia_A](3D/stl/thumb/1xDX_Caviglia_A.png) | 1 | [SX_Caviglia_A](3D/stl/1xDX_Caviglia_A.stl)
+![SX_Caviglia_B](3D/stl/thumb/1xDX_Caviglia_B.png) | 1 | [SX_Caviglia_B](3D/stl/1xDX_Caviglia_B.stl)
+![SX_Piede_A](3D/stl/thumb/1xDX_Piede_A.png) | 1 | [SX_Piede_A](3D/stl/1xDX_Piede_A.stl)
+![SX_Piede_B](3D/stl/thumb/1xDX_Piede_B.png) | 1 | [SX_Piede_B](3D/stl/1xDX_Piede_B.stl)
 
 > SX_* models needs to be mirrored on the correct axis before the printing process.
 
