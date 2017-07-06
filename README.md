@@ -126,9 +126,11 @@ Name | Syntax | Parameters | Description
 S0 | `S0 Ri`<br>or<br>`S0 Li` | **i** = index[0-9] (optional) | Move a servo to its default position.<br>If no index is passed all servos will be reset.
 S1 | `S1 Ri Ad`<br>or<br>`S1 Li Ad` | **i** = index[0-9]<br>**d** = angle[0-1800] | Move a servo to a specific angle.<br>The value 0 corresponds to 0° and <br>the value 1800 corresponds to 180°.
 S2 | `S1 Ri Ad Tm`<br>or<br>`S1 Li Ad Tm` | **i** = index[0-9]<br>**d** = angle[0-1800]<br>**m** = duration[ms] | Move a servo to a specific angle gradually by <br>sweeping it for a specific amount of time.
-S3 | `S3 An Ds Tm` | **n** = anim idx[0-10]<br>**s** = space[cm]<br>**m** = duration[ms] | Apply a specific animation.<br>Space and Duration parameters are unused at the moment <br>but are supposed to be used as parameters <br>for certain animations.
+S3 | `S3 An Ds Tm` | **n** = anim idx[0-10]<br>**s** = space[cm]<br>**m** = duration[ms] | Apply a specific animation. `space` and `duration` are unused at the moment but are supposed to be used as parameters for certain animations. See animations section for the list of animations available.
 Q0 | `Q0 Ri Ad`<br>or<br>`Q0 Ri Ad` | **i** = index[0-9]<br>**d** = angle[0-1800] | Similar to `S1`, but the movement is added to <br>the movements queue. If the angle value is 0 <br>a pause will be planned instead.<br>(A pause will make the next planned <br>movement, on the same motor index, hang until <br>the pause is not ended)<br>This is used in order to plan complex <br>synchronized movements. (E.g. Animations)
 C0 | `Ri Wp`<br>or<br>`Li Wp` | **i** = index[0-9]<br>**p** = pulse width[us] | Sets a specific pulse width to a specific <br>motor for calibration purposes.
+
+## Animations
 
 ## Project Analysis
 This document was written for my high-school exam in order to give to the professors some basic knowledge to make them understand how the project works.
