@@ -35,6 +35,7 @@ Some images done during the development process:
 > Click on the image to enlarge.
 
 ## Getting Started
+Description coming soon.
 
 ### Bill of Materials
 Amount | Hardware
