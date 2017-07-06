@@ -38,7 +38,7 @@ Some images done during the development process:
 
 ### Bill of Materials
 Amount | Hardware
----|---
+-------|---------
 1 | Arduino Pro Micro (Atmega328p)
 1 | HC-05 (Bluetooth)
 2 | 74HC4017 (5-stage Johnson decade counter)
@@ -47,7 +47,7 @@ Amount | Hardware
 1 | Ad-hoc board (See wiring section)
 
 Amount | Screw
----|---
+-------|------
 37 | M2 x 4mm
 32 | M2 x 14mm
 19 | M2 x 20mm
@@ -111,7 +111,7 @@ The firmware allows you to fully control the robot through bluetooth in order to
 Those are the commands implemented that can be sended through the serial protocol.
 
 Name | Syntax | Parameters
----|---|---
+-----|--------|-----------
 S0 | `S0 Ri` or `S0 Li` | **i** = index[0-9] (optional)
 S1 | `S1 Ri Ad` or `S1 Li Ad` | **i** = index[0-9], **d** = angle[0-1800]
 S2 | `S1 Ri Ad Tm` or `S1 Li Ad Tm` | **i** = index[0-9], **d** = angle[0-1800], **m** = duration[ms]
@@ -120,85 +120,13 @@ Q0 | `Q0 Ri Ad` or `S1 Li Ad` | **i** = index[0-9], **d** = angle[0-1800]
 C0 | `Ri Wp` or `Li Wp` | **i** = index[0-9], **p** = pulse witdh[us]
 
 Name | Description
----|---
+-----|------------
 S0 | Move a servo to its default position. If no index is passed all servos will be resetted.
 S1 | Move a servo to a specific angle. The value 0 corresponds to 0° and the value 1800 corresponds to 180°.
 S2 | Move a servo to a specific angle gradually by sweeping it for a specific amount of time.
 S3 | Apply a specific animation. Space and Duration are not used at the moment but are supposed to be used as parameters for certains animations.
 Q0 | Same as `S1` but the movement is added to the movements queue. If the angle value is 0 a pause will be planned instead. (A pause will make the next planned movement, on the same motor index, hang until the pause is not ended) This is used in order to plan complex syncronized movements. (E.g. Animations)
 C0 | Sets a specific pulse width to a specific motor for calibration purposes.
-
-
-## Animations
-The firmware contains some basic animations hardcoded inside it:
-<details> 
-  <summary><b>Forward walk</b> - <i>work-in-progress</i></summary>
-  <br/>
-  <img src="gallery/walk-animation.gif" alt="Humanoid Forward Walk Animation">
-</details>
-<details> 
-  <summary><b>Backward walk</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Backward Walk Animation">
-</details>
-<details> 
-  <summary><b>Side walk to right</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Side Walk to Right Animation">
-</details>
-<details> 
-  <summary><b>Side walk to left</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Side Walk to Left Animation">
-</details>
-<details> 
-  <summary><b>Clockwise standstill rotation</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Clockwise Standstill Rotation Animation">
-</details>
-<details> 
-  <summary><b>Counterclockwise standstill rotation</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Counterclockwise Standstill Rotation Animation">
-</details>
-<details> 
-  <summary><b>Clockwise curved walk</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Clockwise Curved Walk Animation">
-</details>
-<details> 
-  <summary><b>Counterclockwise curved walk</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Counterclockwise Curved Walk Animation">
-</details>
-<details> 
-  <summary><b>Upward lift</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Upward Lift Animation">
-</details>
-<details> 
-  <summary><b>Downward lift</b> - <i>unavailable</i></summary>
-  <br/>
-  <img src="https://via.placeholder.com/512x256?text=Not+Implemented" alt="Humanoid Downward Lift Animation">
-</details>
-<details> 
-  <summary><b>Sit down</b> - <i>done</i></summary>
-  <br/>
-  <img src="gallery/sitdown-animation.gif" alt="Humanoid Sit Down Animation">
-</details>
-<details> 
-  <summary><b>Hello</b> - <i>done</i></summary>
-  <br/>
-  <img src="gallery/hello-animation.gif" alt="Humanoid Hello Animation">
-</details>
-<details> 
-  <summary><b>F*ck off</b> - <i>done</i></summary>
-  <br/>
-  <img src="gallery/fuckoff-animation.gif" alt="Humanoid Hello Animation">
-</details>
-<br/>
-
-> Click on the arrow to see an example of the animation!
 
 ## Project Analysis
 This document was written for my high-school exam in order to give to the professors some basic knowledge to make them understand how the project works.
