@@ -7,14 +7,29 @@ Description coming soon.
 
 The project has been featured here:
 <p>
-  <a href="http://explore.makerfairerome.eu/poi/Exhibit_1447"><img src="https://user-images.githubusercontent.com/3505087/27860797-617e0b1a-617e-11e7-9bb1-460a81c064e9.png" alt="Maker Faire" width="128"></a>
-  <a href="http://www.ilmessaggero.it/pay/edicola/maker_faire_roma_14_ottobre-2001501.html"> <img src="https://user-images.githubusercontent.com/3505087/27860876-c14fec8e-617e-11e7-8f0e-690555bec853.png" alt="Il Messagero" width="200"></a>
+  <a href="http://explore.makerfairerome.eu/poi/Exhibit_1447" target="_blank"><img src="https://user-images.githubusercontent.com/3505087/27860797-617e0b1a-617e-11e7-9bb1-460a81c064e9.png" alt="Maker Faire" width="128"></a>
+  <a href="http://www.ilmessaggero.it/pay/edicola/maker_faire_roma_14_ottobre-2001501.html" target="_blank"> <img src="https://user-images.githubusercontent.com/3505087/27860876-c14fec8e-617e-11e7-8f0e-690555bec853.png" alt="Il Messagero" width="200"></a>
 </p>
 
-## Getting Started
+### Gallery
+<a href="gallery/roboprime-v2.jpg" target="_blank"><img src="gallery/roboprime-v2.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/roboprime-v2-front.jpg" target="_blank"><img src="gallery/roboprime-v2-front.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/roboprime-v2-leg.jpg" target="_blank"><img src="gallery/roboprime-v2-leg.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/roboprime-v2-assembling.jpg" target="_blank"><img src="gallery/roboprime-v2-assembling.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/roboprime-v2-printing.jpg" target="_blank"><img src="gallery/roboprime-v2-printing.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/roboprime-v1-front.jpg" target="_blank"><img src="gallery/roboprime-v1-front.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/roboprime-v1-weigth.jpg" target="_blank"><img src="gallery/roboprime-v1-weigth.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/roboprime-v1-top.jpg" target="_blank"><img src="gallery/roboprime-v1-top.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/board-back.jpg" target="_blank"><img src="gallery/board-back.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/board-front.jpg" target="_blank"><img src="gallery/board-front.jpg" alt="Roboprime" height="128"></a>
+<a href="gallery/hello-animation.gif" target="_blank"><img src="gallery/hello-animation.gif" alt="Roboprime" height="128"></a>
+<a href="gallery/fuckoff-animation.gif" target="_blank"><img src="gallery/fuckoff-animation.gif" alt="Roboprime" height="128"></a>
+<a href="gallery/sitdown-animation.gif" target="_blank"><img src="gallery/sitdown-animation.gif" alt="Roboprime" height="128"></a>
+<a href="gallery/walk-animation.gif" target="_blank"><img src="gallery/walk-animation.gif" alt="Roboprime" height="128"></a>
 
-### Aspect
-![Roboprime](gallery/roboprime-v2.jpg)
+> Click on the image to enlarge.
+
+## Getting Started
 
 ### Bill of Materials
 Amount | Hardware
