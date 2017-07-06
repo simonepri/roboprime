@@ -112,12 +112,12 @@ Those are the commands implemented that can be sended through the serial protoco
 
 Name | Syntax | Parameters
 -----|--------|-----------
-S0 | `S0 Ri` or `S0 Li` | **i** = index[0-9] (optional)
-S1 | `S1 Ri Ad` or `S1 Li Ad` | **i** = index[0-9], **d** = angle[0-1800]
-S2 | `S1 Ri Ad Tm` or `S1 Li Ad Tm` | **i** = index[0-9], **d** = angle[0-1800], **m** = duration[ms]
-S3 | `S3 An Ds Tm` | **n** = anim idx[0-10], **s** = space[cm], **m** = duration[ms]
-Q0 | `Q0 Ri Ad` or `S1 Li Ad` | **i** = index[0-9], **d** = angle[0-1800]
-C0 | `Ri Wp` or `Li Wp` | **i** = index[0-9], **p** = pulse witdh[us]
+S0 | `S0 Ri`<br>or<br>`S0 Li` | **i** = index[0-9](optional)
+S1 | `S1 Ri Ad`<br>or<br>`S1 Li Ad` | **i** = index[0-9]<br>**d** = angle[0-1800]
+S2 | `S1 Ri Ad Tm`<br>or<br>`S1 Li Ad Tm` | **i** = index[0-9]<br>**d** = angle[0-1800]<br>**m** = duration[ms]
+S3 | `S3 An Ds Tm` | **n** = anim idx[0-10]<br>**s** = space[cm]<br>**m** = duration[ms]
+Q0 | `Q0 Ri Ad`<br>or<br>`Q0 Ri Ad` | **i** = index[0-9]<br>**d** = angle[0-1800]
+C0 | `Ri Wp`<br>or<br>`Li Wp` | **i** = index[0-9]<br>**p** = pulse witdh[us]
 
 Name | Description
 -----|------------
