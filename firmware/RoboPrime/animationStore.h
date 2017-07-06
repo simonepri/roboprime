@@ -34,8 +34,6 @@
  *  - Counterclockwise standstill rotation. NO
  *  - Clockwise curved walk.                NO
  *  - Counterclockwise curved walk.         NO
- *  - Upward lift.                          NO
- *  - Downward lift.                        NO
  *  - Sit down.                             DONE
  *  - Hello.                                DONE
  *  - Fuck off.                             DONE
