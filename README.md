@@ -38,7 +38,7 @@ Some images done during the development process:
 Description coming soon.
 
 ### Hardware
-The total cost is around $60-$100. Depending on where you buy the pieces.
+The total cost is about $60-$100. Depending on where you buy the pieces.
 
 Amount | Part
 -------|---------
@@ -52,7 +52,8 @@ Amount | Part
 
 ### Screws
 Screws are used to join pieces together.
-The total cost is around $15.
+
+The total cost is about $15.
 
 Amount | Size
 -------|------
@@ -62,7 +63,8 @@ Amount | Size
 
 ### 3D Models
 You need to print it in ABS, since servos becomes hot after a while and can melt the plastic.
-The printing cost is around $20-30.
+
+The printing cost is about $20-$30.
 
 > SX_* models needs to be mirrored on the correct axis before the printing process.
 
