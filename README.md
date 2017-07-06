@@ -37,21 +37,33 @@ Some images done during the development process:
 ## Getting Started
 Description coming soon.
 
-### Bill of Materials
-Amount | Hardware
+### Hardware
+The total cost is around $60-$100. Depending on where you buy the pieces.
+
+Amount | Part
 -------|---------
 1 | Arduino Pro Micro (Atmega328p)
 1 | HC-05 (Bluetooth)
 2 | 74HC4017 (5-stage Johnson decade counter)
 1 | MPU-6050 (Gyroscope + Accellerometer UNUSED)
 21 | MG90S 9G (Servo motors)
+2 | 5A DC-DC (Voltage step-down Used to power the servos)
 1 | Ad-hoc board (See wiring section)
 
-Amount | Screw
+### Screws
+Screws are used to join pieces together.
+The total cost is around $15.
+
+Amount | Size
 -------|------
 37 | M2 x 4mm
 32 | M2 x 14mm
 19 | M2 x 20mm
+
+### 3D Models
+You need to print it in ABS, since servos becomes hot after a while and can melt the plastic.
+
+> SX_* models needs to be mirrored on the correct axis before the printing process.
 
 Part | Amount | Download
 -----|--------|---------
@@ -98,8 +110,6 @@ Part | Amount | Download
 <img src="3D/stl/thumb/1xDX_Caviglia_B.png" alt="SX_Caviglia_B" width="50" height="50"> | 1 | [SX_Caviglia_B](3D/stl/1xDX_Caviglia_B.stl)
 <img src="3D/stl/thumb/1xDX_Piede_A.png" alt="SX_Piede_A" width="50" height="50"> | 1 | [SX_Piede_A](3D/stl/1xDX_Piede_A.stl)
 <img src="3D/stl/thumb/1xDX_Piede_B.png" alt="SX_Piede_B" width="50" height="50"> | 1 | [SX_Piede_B](3D/stl/1xDX_Piede_B.stl)
-
-> SX_* models needs to be mirrored on the correct axis before the printing process.
 
 ### Wiring
 ![Wiring](https://user-images.githubusercontent.com/3505087/27872822-56d50d54-61aa-11e7-9c37-f4fec5446ede.png)
