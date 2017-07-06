@@ -115,7 +115,7 @@ Part | Amount | Download
 
 ### Wiring
 Schematics are contained in the `schematics` folder.
-<img src="https://user-images.githubusercontent.com/3505087/27872822-56d50d54-61aa-11e7-9c37-f4fec5446ede.png" alt="Roboprime fritzing" width="500">
+<img src="https://user-images.githubusercontent.com/3505087/27920395-b1efe360-6274-11e7-872c-73cbb0638eb4.png" alt="Roboprime fritzing" width="500">
 
 ### Firmware
 The firmware is contained in the `firmware` folder and can be compiled and uploaded to the board thanks to the Arduino IDE.
