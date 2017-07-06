@@ -54,7 +54,7 @@ Amount | Screw
 
 Part | Amount | Download
 -----|--------|---------
-<img src="3D/stl/thumb/38xSP_Cover_1_foro.png" alt="SP_Cover_1_foro" width="50" height="50"> | 38 | [SP_Cover_1_foro](3D/stl/1xSP_Cover_1_foro.stl)
+<img src="3D/stl/thumb/38xSP_Cover_1_foro.png" alt="SP_Cover_1_foro" width="50" height="50"> | 38 | [SP_Cover_1_foro](3D/stl/38xSP_Cover_1_foro.stl)
 <img src="3D/stl/thumb/1xMID_Scapole.png" alt="MID_Scapole" width="50" height="50"> | 1 | [MID_Scapole](3D/stl/1xMID_Scapole.stl)
 <img src="3D/stl/thumb/1xMID_Torace.png" alt="MID_Torace" width="50" height="50"> | 1 | [MID_Torace](3D/stl/1xMID_Torace.stl)
 <img src="3D/stl/thumb/1xMID_Anca_TOP.png" alt="MID_Anca_TOP" width="50" height="50"> | 1 | [MID_Anca_TOP](3D/stl/1xMID_Anca_TOP.stl)
