@@ -114,7 +114,8 @@ Part | Amount | Download
 <img src="3D/stl/thumb/1xDX_Piede_B.png" alt="SX_Piede_B" width="50" height="50"> | 1 | [SX_Piede_B](3D/stl/1xDX_Piede_B.stl)
 
 ### Wiring
-![Wiring](https://user-images.githubusercontent.com/3505087/27872822-56d50d54-61aa-11e7-9c37-f4fec5446ede.png)
+Schematics are contained in the `schematics` folder.
+<img src="https://user-images.githubusercontent.com/3505087/27872822-56d50d54-61aa-11e7-9c37-f4fec5446ede.png" alt="Roboprime fritzing" width="500">
 
 ### Firmware
 The firmware is contained in the `firmware` folder and can be compiled and uploaded to the board thanks to the Arduino IDE.
