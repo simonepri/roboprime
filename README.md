@@ -114,8 +114,10 @@ Part | Amount | Download
 ### Wiring
 ![Wiring](https://user-images.githubusercontent.com/3505087/27872822-56d50d54-61aa-11e7-9c37-f4fec5446ede.png)
 
-### Firmware size
-![Firmware size](https://user-images.githubusercontent.com/3505087/27862900-dbcd7a6e-6187-11e7-95c3-12126a2519e5.png)
+### Firmware
+The firmware is contained in the `firmware` folder and can be compiled and uploaded to the board thanks to the Arduino IDE.
+
+<img src="https://user-images.githubusercontent.com/3505087/27862900-dbcd7a6e-6187-11e7-95c3-12126a2519e5.png" alt="Firmware size" width="720">
 
 ## Commands
 The firmware allows you to fully control the robot through bluetooth in order to make complex things.
