@@ -62,6 +62,7 @@ Amount | Size
 
 ### 3D Models
 You need to print it in ABS, since servos becomes hot after a while and can melt the plastic.
+The printing cost is around $20-30.
 
 > SX_* models needs to be mirrored on the correct axis before the printing process.
 
