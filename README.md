@@ -122,7 +122,9 @@ The firmware is contained in the `firmware` folder and can be compiled and uploa
 
 <img src="https://user-images.githubusercontent.com/3505087/27862900-dbcd7a6e-6187-11e7-95c3-12126a2519e5.png" alt="Firmware size" width="720">
 
-## Commands
+### Usage
+
+### Commands
 The firmware allows you to fully control the robot through bluetooth in order to make complex things.
 Those are the commands implemented that can be sended through the serial protocol.
 
@@ -135,7 +137,7 @@ S3 | `S3 An Ds Tm` | **n** = anim idx[0-10]<br>**s** = space[cm]<br>**m** = dura
 Q0 | `Q0 Ri Ad`<br>or<br>`Q0 Ri Ad` | **i** = index[0-9]<br>**d** = angle[0-1800] | Similar to `S1`, but the movement is added to <br>the movements queue. If the angle value is 0 <br>a pause will be planned instead.<br>(A pause will make the next planned <br>movement, on the same motor index, hang until <br>the pause is not ended)<br>This is used in order to plan complex <br>synchronized movements. (E.g. Animations)
 C0 | `Ri Wp`<br>or<br>`Li Wp` | **i** = index[0-9]<br>**p** = pulse width[us] | Sets a specific pulse width to a specific <br>motor for calibration purposes.
 
-## Animations
+### Animations
 
 The firmware contains some basic animations hardcoded inside it:
 
