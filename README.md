@@ -122,7 +122,7 @@ The firmware is contained in the `firmware` folder and can be compiled and uploa
 
 <img src="https://user-images.githubusercontent.com/3505087/27862900-dbcd7a6e-6187-11e7-95c3-12126a2519e5.png" alt="Firmware size" width="720">
 
-### Usage
+## Usage
 
 ### Commands
 The firmware allows you to fully control the robot through bluetooth in order to make complex things.
