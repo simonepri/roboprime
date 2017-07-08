@@ -1,2 +1,3 @@
-*.h linguist-language=Arduino
-*.cpp linguist-language=Arduino
+firmware/*.h linguist-language=Arduino
+firmware/*.cpp linguist-language=Arduino
+3D/*.blend linguist-language=Blender
