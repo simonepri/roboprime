@@ -1,7 +1,7 @@
-# Roboprime 🤖 [![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/simonepri/roboprime/)
+# RoboPrime 🤖 [![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/simonepri/roboprime/)
 > Full featured 21 DOF 3D Printed Humanoid Robot based on ATmega328P chip
 <p align="center">
-  <img src="gallery/hello-world.gif" alt="Roboprime Hello">
+  <img src="gallery/hello-world.gif" alt="RoboPrime Hello">
 </p>
 Description coming soon.
 
@@ -16,20 +16,20 @@ The project has been featured here:
 Some images done during the development process:
 
 <p>
-  <img src="gallery/roboprime-v2.jpg" alt="Roboprime" height="128">
-  <img src="gallery/roboprime-v2-front.jpg" alt="Roboprime" height="128">
-  <img src="gallery/roboprime-v2-leg.jpg" alt="Roboprime" height="128">
-  <img src="gallery/roboprime-v2-assembling.jpg" alt="Roboprime" height="128">
-  <img src="gallery/roboprime-v2-printing.jpg" alt="Roboprime" height="128">
-  <img src="gallery/roboprime-v1-front.jpg" alt="Roboprime" height="128">
-  <img src="gallery/roboprime-v1-weigth.jpg" alt="Roboprime" height="128">
-  <img src="gallery/roboprime-v1-top.jpg" alt="Roboprime" height="128">
-  <img src="gallery/board-back.jpg" alt="Roboprime" height="128">
-  <img src="gallery/board-front.jpg" alt="Roboprime" height="128">
-  <img src="gallery/hello-animation.gif" alt="Roboprime" height="128">
-  <img src="gallery/fuckoff-animation.gif" alt="Roboprime" height="128">
-  <img src="gallery/sitdown-animation.gif" alt="Roboprime" height="128">
-  <img src="gallery/walk-animation.gif" alt="Roboprime" height="128">
+  <img src="gallery/roboprime-v2.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/roboprime-v2-front.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/roboprime-v2-leg.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/roboprime-v2-assembling.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/roboprime-v2-printing.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/roboprime-v1-front.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/roboprime-v1-weigth.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/roboprime-v1-top.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/board-back.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/board-front.jpg" alt="RoboPrime" height="128">
+  <img src="gallery/hello-animation.gif" alt="RoboPrime" height="128">
+  <img src="gallery/fuckoff-animation.gif" alt="RoboPrime" height="128">
+  <img src="gallery/sitdown-animation.gif" alt="RoboPrime" height="128">
+  <img src="gallery/walk-animation.gif" alt="RoboPrime" height="128">
 </p>
 
 > Click on the image to enlarge.
@@ -115,7 +115,7 @@ Part | Amount | Download
 
 ### Wiring
 Schematics are contained in the `schematics` folder.
-<img src="https://user-images.githubusercontent.com/3505087/27921374-e55e0990-6277-11e7-978f-4e2bca6f3ce1.png" alt="Roboprime fritzing" width="500">
+<img src="https://user-images.githubusercontent.com/3505087/27921374-e55e0990-6277-11e7-978f-4e2bca6f3ce1.png" alt="RoboPrime fritzing" width="500">
 
 ### Firmware
 The firmware is contained in the `firmware` folder and can be compiled and uploaded to the board thanks to the Arduino IDE.
